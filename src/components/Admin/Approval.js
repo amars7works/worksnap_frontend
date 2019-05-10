@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Card,Col,Image,Button,Nav} from 'react-bootstrap';
+import {Card,Button,Nav} from 'react-bootstrap';
 import "./Approval.css"
 
 class Approval extends Component {
@@ -7,21 +7,45 @@ class Approval extends Component {
         super(props);
         this.state ={
             posts:[],
+            token:'tinzpp0el0yxz4xzb35o0qjgz4ied6',
+            personDetails:null,
         }
     }
     
-    componentDidMount(){
-        const url = "https://jsonplaceholder.typicode.com/users"; 
-        fetch(url ,{
-            method:"GET"
-        })
-        .then(res => res.json())
-        .then (posts => {
-            this.setState({
-                posts:posts,
-            })
-        });
-    }
+    // componentDidMount(){
+    //     const url = "http://worksnaps.s7works.io/api/leave/"; 
+    //     fetch(url ,{
+    //         method:"GET"
+    //     })
+    //     .then(res => res.json())
+    //     .then (posts => {
+    //         this.setState({
+    //             data:data,
+    //         })
+    //     });
+    //     this.setState({person:data.result[0]});
+    // }
+    // axios({
+    //     method: 'post',
+    //     url: 'http://worksnaps.s7works.io/apply_leave/',
+    //     data:[leave_request_data]
+    //   })
+
+   async componentDidMount(){
+    const url="http://192.168.10.174:8000/api/leave/";
+    const response = await fetch(url);
+    const data = await response.json();
+    this.setState({personDetails: data.result[0], loading:false });
+
+    // localStorage.setItem('session',JSON.stringify(token='tinzpp0el0yxz4xzb35o0qjgz4ied6'));
+
+
+
+   }
+  
+   
+
+
   render() {
     return (
       <div>
@@ -42,19 +66,26 @@ class Approval extends Component {
 
           </div>
           <div className="row employrequest">
-                <Card style={{ width: '16rem', marginLeft:'10px' }}>
+
+          {this.state.loading || !this.state.person ?(
+              <div>loading ....</div>
+          ):(
+                  <Card style={{ width: '16rem', marginLeft:'10px' }}>
                 <Card.Header><h5>Employ Name</h5><span>Web Developer</span>
 
-                <Col xs={6} md={4}>
-                <Image src="holder.js/171x180" roundedCircle />
-                </Col>
+                
                 </Card.Header>
 
                     <Card.Body>
-                        <Card.Title>Employ Name</Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                        <Card.Title>
+                        <h4>{this.state.personDetails.Type_of_Request}</h4>
+
+                        </Card.Title>
                         <Card.Text>
-                       leave reason text
+                        <p>{this.state.personDetails.leave_start_date && this.state.personDetails.leave_end_date}</p>
+
+                            <p>{this.state.personDetails.apply_reason}</p>
+                       
                         </Card.Text>
                         
                     </Card.Body>
@@ -64,14 +95,16 @@ class Approval extends Component {
                     </Card.Footer>
                 </Card>
 
+          )}
+                
 
        
                 <Card style={{ width: '16rem', marginLeft:'10px' }}>
                 <Card.Header><h5>Employ Name</h5><span>Web Developer</span>
-
+{/* 
                 <Col xs={6} md={4}>
                 <Image src="holder.js/171x180" roundedCircle />
-                </Col>
+                </Col> */}
                 </Card.Header>
                     <Card.Body>
                         <Card.Title>Employ Name</Card.Title>
@@ -93,9 +126,9 @@ class Approval extends Component {
                 </Card>
                 <Card style={{ width: '16rem', marginLeft:'10px' }}>
                 <Card.Header><h5>Employ Name</h5><span>Web Developer</span>
-                    <Col xs={6} md={4}>
+                    {/* <Col xs={6} md={4}>
                     <Image src="holder.js/171x180" roundedCircle />
-                    </Col>
+                    </Col> */}
                     </Card.Header>
                     <Card.Body>
                         <Card.Title>Employ Name</Card.Title>
@@ -116,9 +149,9 @@ class Approval extends Component {
                 <Card style={{ width: '16rem', marginLeft:'10px' }}>
                 <Card.Header><h5>Employ Name</h5><span>Web Developer</span>
 
-                <Col xs={6} md={4}>
+                {/* <Col xs={6} md={4}>
                 <Image src="holder.js/171x180" roundedCircle />
-                </Col>
+                </Col> */}
                 </Card.Header>
                     <Card.Body>
 

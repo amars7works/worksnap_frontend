@@ -4,7 +4,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 // import isAfter from "date-fns/isAfter";
 import {Input} from 'reactstrap';
-
 const axios = require('axios');
 export class Leave extends Component {
 
@@ -21,7 +20,7 @@ export class Leave extends Component {
         this.handleChangeStart = this.handleChangeStart.bind(this)
         this.handleChangeEnd = this.handleChangeEnd.bind(this)
         this.handleChange = this.handleChange.bind(this)
-        this.leaveRequestStatus =this.leaveRequestStatus.bind(this)
+        // this.leaveRequestStatus =this.leaveRequestStatus.bind(this)
     
         this.state = {
           show: false,
@@ -29,8 +28,7 @@ export class Leave extends Component {
           textarea_text:"",
           startDate: new Date(),
           endDate: new Date(),
-          leaveRequestStatus:"pending",
-
+          // leaveRequestStatus:"pending",
         };
       }
 
@@ -63,8 +61,8 @@ export class Leave extends Component {
            
             else{
              let leave_request_data ={
-                    typeof_leave:this.state.selected_option,
-                    Reason_leave:this.state.textarea_text,
+                    Type_of_Request:this.state.selected_option,
+                    apply_reason:this.state.textarea_text,
                     leave_start_data:this.state.startDate,
                     leave_end_data:this.state.endDate,
                     requestType:this.state.leaveRequestStatus
@@ -77,13 +75,15 @@ export class Leave extends Component {
               // }  
               axios({
                 method: 'post',
-                url: 'https://jsonplaceholder.typicode.com/posts',
+                url: 'http://worksnaps.s7works.io/apply_leave/',
                 data:[leave_request_data]
-                
               })
-              .then(function (response) {
-                console.log(response);
-              })
+              // .then(function (response) {
+              //   console.log(response);
+              // })
+
+              console.log(leave_request_data)
+
               
             }
     }
@@ -98,11 +98,11 @@ export class Leave extends Component {
             textarea_text:e.target.value,
         })
     }
-    leaveRequestStatus(){
-      this.setState({
-        leaveStatusMessage: "pending"  
-      })
-    }
+    // leaveRequestStatus(){
+    //   this.setState({
+    //     leaveStatusMessage: "pending"  
+    //   })
+    // }
     
       handleClose() {
         this.setState({ show: false });
@@ -111,8 +111,20 @@ export class Leave extends Component {
       handleShow() {
         this.setState({ show: true });
       }
+      // renderstatus() {
+
+      //   return(
+      //     <text>pending</text>
+          
+      //   )
+      // }
+      
+
+     
 
   render() {
+
+
     return (
       <div>
         <Button variant="primary" className="col-md-11" style={{backgroundColor:'#FF6565', borderColor:'#FF6565', height:'70px',textAlignLast:"right",padding:'25px',borderRadius:'15px',fontSize:'20px'}} onClick={this.handleShow}>
@@ -169,8 +181,7 @@ export class Leave extends Component {
                     <div className="col-md-6">
                     <span className>To: </span>
                     <DatePicker    
-                        className="form-control"   
-                        style={{paddingright:'0px',paddingleft: '33px'}}
+                        className="form-control"                           
                         ref="range"
                         name = "range"
                         id = "range"
@@ -194,6 +205,7 @@ export class Leave extends Component {
                  value={this.state.textarea_text}
                  >
                  </textarea>
+                 <p>{this.state.changeIntialText}</p>
 
                  <br/>
                  <br/>
@@ -221,7 +233,7 @@ export class Leave extends Component {
             <Button variant="secondary" style={{borderRadius:'20px'}} onClick={this.handleClose}>
               Close
             </Button>
-            <button type="submit" className="btn btn-success form-control col-sm-2"  style={{borderRadius:'20px'}} >Submit</button>
+            <button type="submit" className="btn btn-success form-control col-sm-2" onClick={(e) => this.props.Clicked("pending")} style={{borderRadius:'20px'}} >Submit</button>
           </ModalFooter>
             </form>
 

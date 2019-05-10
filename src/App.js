@@ -9,7 +9,7 @@ function App() {
     <div className="App">
        <Router>
         <Route exact path='/frd/leave_request/' component={Total} />
-        <Route exact path='/frd/leave_approval/' component={Approval} />
+        <Route exact path='/api/leave/' component={Approval} />
       </Router>
 
 

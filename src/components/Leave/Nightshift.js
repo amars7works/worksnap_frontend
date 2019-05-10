@@ -64,20 +64,17 @@ export class Nightshift extends Component {
             else{
              let leave_request_data ={
                     typeof_leave:this.state.selected_option,
-                    Reason_leave:this.state.textarea_text,
+                    apply_reason:this.state.textarea_text,
                     leave_start_data:this.state.startDate,
                     leave_end_data:this.state.endDate,
-                    requestType:this.state.leaveRequestStatus
+                    Type_of_Request:this.state.leaveRequestStatus
              }
            console.log("leaverequestdata",leave_request_data.requestType)
            
-              // const formData = {};
-              // for (const field in this.refs) {
-              //   formData[field] = this.refs[field].value;
-              // }  
+             
               axios({
                 method: 'post',
-                url: 'https://jsonplaceholder.typicode.com/posts',
+                url: 'http://worksnaps.s7works.io/apply_leave/',
                 data:[leave_request_data]
                 
               })
@@ -86,13 +83,11 @@ export class Nightshift extends Component {
               })
               
             }
+            if(this.handleSubmit===this.handleClose){
+
+            }
     }
-    // selectOptions(e){
-    //     let value = e.target.value;
-    //     this.setState({
-    //         selected_option:value,
-    //       }) 
-    // }
+   
     textarea(e){
         this.setState({
             textarea_text:e.target.value,
@@ -129,23 +124,6 @@ export class Nightshift extends Component {
           <div className="row">
             
             <div className="col-md-10 mt-2">
-                 {/* <div className="form-group">
-                    <Input 
-                        type="select" 
-                        className="custom-select form-control" 
-                        name="selected_option"
-                        value={this.state.selected_option}
-                        ref="selected_option"
-                        id="selected_option"
-                        onChange={this.selectOptions} >
-                        <option value="">select option</option>                                 
-                        <option value="Slick Leave">Slick Leave</option>
-                        <option value="Vacation Leave">Vacation Leave</option>
-                        <option value="Work Form Home">Work Form Home</option>
-                        <option value="Night shift Request">Night shift Request</option>
-                        <option value="Emergency">Emergency</option>
-                     </Input>
-                 </div> */}
                 
                  <div className="form-group row mt-2">
                     <div className="col-md-6">
@@ -165,7 +143,7 @@ export class Nightshift extends Component {
                         endDate={this.state.endDate}
                         onChange={this.handleChangeStart}
                     // dateFormat="MM/DD/YYYY"
-                    />
+                      />
                     </div>
                     <div className="col-md-6">
                     <span className>To: </span>
@@ -222,7 +200,7 @@ export class Nightshift extends Component {
             <Button variant="secondary" style={{borderRadius:'20px'}} onClick={this.handleClose}>
               Close
             </Button>
-            <button type="submit" className="btn btn-success form-control col-sm-2" style={{borderRadius:'20px'}}>Submit</button>
+            <button type="submit" className="btn btn-success form-control col-sm-2" onClick={(e) => this.props.Clicked("pending")} style={{borderRadius:'20px'}} >Submit</button>
           </ModalFooter>
             </form>
 
