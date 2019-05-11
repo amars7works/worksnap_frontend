@@ -4,17 +4,17 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Total from './components/Leave/Total';
 import Approval from './components/Admin/Approval';
 
-function App() {
-  return (
-    <div className="App">
-       <Router>
-        <Route exact path='/frd/leave_request/' component={Total} />
-        <Route exact path='/api/leave/' component={Approval} />
-      </Router>
+class App extends React.Component {
 
-
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <Route exact path='/frd/requests/' component={Total} />
+          <Route exact path='/frd/request_approve/' component={Approval} />
+        </Router>
+      </div>)
+  }
 }
 
 export default App;

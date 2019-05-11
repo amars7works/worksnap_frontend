@@ -2,24 +2,21 @@ body{
   background-color: #EAF0F5;
 
 }
-.leaverequest{
+.leave-request{
   background-color: white;
   margin: auto;
   border-radius: 10px;
   padding: 25px;
 
 }
-.sentstauts{
+.sent-status{
   background-color: white;
   border-radius: 10px;
   margin: auto;
   padding: 25px;
   text-align-last: left;
-  
-
 }
 .form-control1{
   padding-left: 10px;
   width: 100%;
 }
-
