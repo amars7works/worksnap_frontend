@@ -1,15 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Total from './components/Leave/Total';
+import Approval from './components/Admin/Approval';
 
-import Tables from './Tables';
+class App extends React.Component {
 
-function App() {
-  return (
-    <div >
-     <Tables />
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <Route exact path='/frd/requests/' component={Total} />
+          <Route exact path='/frd/request_approve/' component={Approval} />
+        </Router>
+      </div>)
+  }
 }
 
 export default App;

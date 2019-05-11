@@ -1,34 +1,22 @@
-.table1, td, th {
-  border: 1px solid black !important;
-  margin-left: 300px; 
-  margin-top: 70px;
-  font-size: 20px;
-  border-collapse: collapse;  
-  border: 1px solid blueviolet;
-  font-size: 18px;
-  padding: 4px;
-}
+body{
+  background-color: #EAF0F5;
 
-@media (max-width: 1000px) and (orientation: landscape){
-  .table1, td, th { 
-    margin-left: 100px;
-    margin-top: 70px;
-    border-collapse: collapse;    
-    border: 1px solid black ;
-    font-size: 12px;
-    font-size: 18px;
-    padding: 5px;
-  }
 }
+.leave-request{
+  background-color: white;
+  margin: auto;
+  border-radius: 10px;
+  padding: 25px;
 
-@media (max-width: 1000px){
-  .table1, td, th { 
-    margin-left: 100px;
-    margin-top: 70px;
-    border-collapse: collapse;    
-    border: 1px solid black ;
-    font-size: 12px;
-    padding: 5px;
-    font-size: 18px;
-  }
+}
+.sent-status{
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  padding: 25px;
+  text-align-last: left;
+}
+.form-control1{
+  padding-left: 10px;
+  width: 100%;
 }
