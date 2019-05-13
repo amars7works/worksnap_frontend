@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios';
 export class Requestsent extends Component {
     constructor(props, context) {
         super(props, context);
@@ -8,15 +9,16 @@ export class Requestsent extends Component {
         }
     }
     componentDidMount(){
-        const url = "http://worksnaps.s7works.io/apply_leave/"; 
-        fetch(url ,{
-            method:"GET"
-        })
-        .then(res => res.json())
-        .then (posts => {
+        const config = {
+            url: "/api/get_requests/",
+            method: 'GET'
+        }
+        axios(config)
+        .then((res) => {
             this.setState({
-                posts:posts,
-            })
+                posts: res.data
+            });
+            console.log(res.data)
         });
     }
   render() {

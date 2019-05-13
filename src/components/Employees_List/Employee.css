@@ -1,0 +1,23 @@
+
+.card{
+    margin-left: 10px !important;
+    margin-bottom: 10px !important;
+    text-align: center;
+    border-radius: 10px;
+}
+.row{
+    margin-right:0px; 
+ margin-left: 0px;
+}
+.card img{
+    margin: auto;
+    padding: 10px;
+
+}
+.card-title{
+    color:#4796bc;
+}
+.datepicker{
+    border-radius: 50px;
+
+}

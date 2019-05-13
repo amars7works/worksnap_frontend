@@ -60,27 +60,26 @@ export class Leave extends Component {
             }
            
             else{
-             let leave_request_data ={
-                    Type_of_Request:this.state.selected_option,
-                    apply_reason:this.state.textarea_text,
-                    leave_start_data:this.state.startDate,
-                    leave_end_data:this.state.endDate,
-                    requestType:this.state.leaveRequestStatus
+              var leave_request_data ={
+                    Type_of_Request: this.state.selected_option,
+                    apply_reason: this.state.textarea_text,
+                    leave_start_date: this.state.startDate,
+                    leave_end_date: this.state.endDate,
+                  
              }
            console.log("leaverequestdata",leave_request_data.requestType)
            
-              // const formData = {};
-              // for (const field in this.refs) {
-              //   formData[field] = this.refs[field].value;
-              // }  
-              axios({
-                method: 'post',
-                url: 'http://worksnaps.s7works.io/apply_leave/',
-                data:[leave_request_data]
-              })
-              // .then(function (response) {
-              //   console.log(response);
-              // })
+              
+              const config = {
+                method: 'POST',
+                url: '/api/apply_leave/',
+                withCredentials: true,
+                data: leave_request_data
+              }
+              axios(config).then((response) => {
+                console.log(response.data)
+              });
+
 
               console.log(leave_request_data)
 
@@ -151,9 +150,9 @@ export class Leave extends Component {
                         id="selected_option"
                         onChange={this.selectOptions} >
                         <option value="">select option</option>                                 
-                        <option value="Slick Leave">Slick Leave</option>
-                        <option value="Vacation Leave">Vacation Leave</option>
-                        
+                        <option value="Sick_Leave">Sick Leave</option>
+                        <option value="Vacation_Leave">Vacation Leave</option>
+                        <option value="General_Leave">General Leave</option>
                         <option value="Emergency">Emergency</option>
                      </Input>
                  </div>

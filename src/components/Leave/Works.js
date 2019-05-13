@@ -25,11 +25,10 @@ export class Works extends Component {
     
         this.state = {
           show: false,
-          // selected_option:"",
           textarea_text:"",
           startDate: new Date(),
           endDate: new Date(),
-          leaveRequestStatus:"Work from Home Request",
+          leaveRequestStatus:"Work_From_Home",
 
         };
       }
@@ -63,36 +62,27 @@ export class Works extends Component {
            
             else{
              let leave_request_data ={
-                    typeof_leave:this.state.selected_option,
                     apply_reason:this.state.textarea_text,
-                    leave_start_data:this.state.startDate,
-                    leave_end_data:this.state.endDate,
-                    Type_of_Request:this.state.leaveRequestStatus
+                    leave_start_date:this.state.startDate,
+                    leave_end_date:this.state.endDate,
+                    Type_of_Request:this.state.leaveRequestStatus,
              }
-           console.log("leaverequestdata",leave_request_data.requestType)
-           
-              // const formData = {};
-              // for (const field in this.refs) {
-              //   formData[field] = this.refs[field].value;
-              // }  
-              axios({
-                method: 'post',
-                url: 'http://worksnaps.s7works.io/apply_leave/',
-                data:[leave_request_data]
-                
-              })
-              .then(function (response) {
-                console.log(response);
-              })
+             const config = {
+              method: 'POST',
+              url: '/api/apply_leave/',
+              withCredentials: true,
+              data: leave_request_data
+            }
+            axios(config).then((response) => {
+              console.log(response.data)
+            });
+
+
+            console.log(leave_request_data)
               
             }
     }
-    // selectOptions(e){
-    //     let value = e.target.value;
-    //     this.setState({
-    //         selected_option:value,
-    //       }) 
-    // }
+   
     textarea(e){
         this.setState({
             textarea_text:e.target.value,
@@ -129,23 +119,7 @@ export class Works extends Component {
           <div className="row">
             
             <div className="col-md-10 mt-2">
-                 {/* <div className="form-group">
-                    <Input 
-                        type="select" 
-                        className="custom-select form-control" 
-                        name="selected_option"
-                        value={this.state.selected_option}
-                        ref="selected_option"
-                        id="selected_option"
-                        onChange={this.selectOptions} >
-                        <option value="">select option</option>                                 
-                        <option value="Slick Leave">Slick Leave</option>
-                        <option value="Vacation Leave">Vacation Leave</option>
-                        <option value="Work Form Home">Work Form Home</option>
-                        <option value="Night shift Request">Night shift Request</option>
-                        <option value="Emergency">Emergency</option>
-                     </Input>
-                 </div> */}
+                 
                 
                  <div className="form-group row mt-2">
                     <div className="col-md-6">
@@ -201,16 +175,7 @@ export class Works extends Component {
                  <br/>
 
 
-                 {/* <div className="col-md-5 leavestatus">
-                  <h5 className = "text-bold"> </h5>
-                  <p>Leave Application</p> 
-                  <span style={{fontSize:'12px'}} 
-                  data={this.state.posts} 
-                  value = {this.status}
-                   onChange ={this.leaveRequestStatus}> pending </span>
-                
-                </div> */}
-                
+                 
                 
                 
                 

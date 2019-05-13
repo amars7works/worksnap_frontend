@@ -32,10 +32,10 @@ class Approval extends Component {
     //   })
 
    async componentDidMount(){
-    const url="http://192.168.10.174:8000/api/leave/";
+    const url="/api/get_requests/";
     const response = await fetch(url);
     const data = await response.json();
-    this.setState({personDetails: data.result[0], loading:false });
+    this.setState({personDetails: data, loading:false });
 
     // localStorage.setItem('session',JSON.stringify(token='tinzpp0el0yxz4xzb35o0qjgz4ied6'));
 
