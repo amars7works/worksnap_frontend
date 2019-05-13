@@ -20,7 +20,7 @@ class Total extends Component {
   render() {
     return (
       <div>
-        <div className ="col-md-4 leaverequest" style={{borderRadius:'2px solid black'}}>
+        <div className ="col-md-4 leave-request" style={{borderRadius:'2px solid black'}}>
     <Leave intialText ={this.state.intialText} Clicked = {this.Clicked}/>
     <br/>
     <br/>
@@ -33,7 +33,7 @@ class Total extends Component {
     </div>
 
     <br/>
-    <div className = "col-md-4 sentstauts">
+    <div className = "col-md-4 sent-status">
     <Requestsent intialText = {this.state.intialText} />
     
 
