@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import {Card,Button,Nav} from 'react-bootstrap';
 import "./Approval.css"
+import axios from 'axios'
 
-
-const axios = require('axios');
 
 class Approval extends Component {
     constructor(props) {
@@ -12,12 +11,16 @@ class Approval extends Component {
             posts:[],
             token:'tinzpp0el0yxz4xzb35o0qjgz4ied6',
             personDetails:null,
+            isShow : false,
+            declineRequest:"rejected",
+            decline_Status:"Rejected",
+            approved_Status:"Approved"
+             
         }
+
+        this.declineRequest = this.declineRequest.bind(this)
     }
     
-
-
-  
 componentDidMount(){
     const config = {
         url: "/api/get_requests/",
@@ -30,19 +33,57 @@ componentDidMount(){
         this.setState({
             posts: res.data
         });
-            // this.setState({personDetails: data.return[0], loading:false });
 
-        console.log(res.data)
+        // console.log(res.data)
     });
+    
+
 }
 
+status(){
+    const config1 = {
+       
+        method: 'PUT',
+        url: '/api/get_requests/',
+        withCredentials: true,
+        data:{
+          leave_status : "Rejected",
+          leave_status : "Approved"
+
+        }
+        
+    }
+    axios(config1).then((response) => {
+        console.log("RESPONSE****",response.data)
+    });
+    console.log(config1)
+}
+    
+        approvedRequest(e){
+            this.setState({
+                isShow : true,
+                approved_Status:"Approved"
+                
+            
+            })
+        }
+
+declineRequest(e){
+    this.setState({
+
+      
+        isShow : true,
+        decline_Status:"Rejected"
+    
+    })
+    
+    
+    }
+
+  
 
   render() {
-    // $(document).ready(function(){
-    //   $("Button").click(function(){
-    //     $("#div1").remove();
-    //   })
-    // });
+    
 
     return (
       <div>
@@ -68,14 +109,13 @@ componentDidMount(){
 
 { this.state.posts.map(post => 
                   <Card style={{ width: '16rem', marginLeft:'10px' }} id="#div1">
-                <Card.Header><h5>{post.id}</h5><span>Web Developer</span>
+                <Card.Header><h5>{post.username}</h5><span>Web Developer</span>
 
                 
                 </Card.Header>
 
                     <Card.Body>
                         <Card.Title>
-                        {/* <h4>{ this.state.posts(posts => {posts.id})}</h4> */}
 
                         </Card.Title>
                         <Card.Text>
@@ -89,8 +129,8 @@ componentDidMount(){
                         
                     </Card.Body>
                     <Card.Footer className="text-muted">
-                    <Button className="col-md-5 btn" variant="danger">Decline</Button>
-                        <Button className="col-md-5 btn" variant="success">Accept</Button>
+                    <Button className="col-md-5 btn" variant="danger"  onClick={this.declineRequest}>Decline</Button>
+                        <Button className="col-md-5 btn" variant="success" onClick={this.approvedRequest} >Accept</Button>
                     </Card.Footer>
                 </Card>
 )}

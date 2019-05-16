@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import {Button,Modal, ModalFooter} from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from 'axios'
+
 // import isAfter from "date-fns/isAfter";
 // import {Input} from 'reactstrap';
 
-const axios = require('axios');
+// const axios = require('axios');
 export class Works extends Component {
 
     constructor(props, context) {
@@ -79,10 +81,20 @@ export class Works extends Component {
 
 
             console.log(leave_request_data)
+
+            this.resetMyForm();
+
               
             }
     }
-   
+    resetMyForm(e){
+      this.setState({
+        textarea_text:"",
+        startDate: "",
+        endDate: ""
+      })
+  }
+
     textarea(e){
         this.setState({
             textarea_text:e.target.value,

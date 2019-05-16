@@ -4,7 +4,11 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 // import isAfter from "date-fns/isAfter";
 import {Input} from 'reactstrap';
-const axios = require('axios');
+import axios from 'axios'
+
+// const axios = require('axios');
+
+
 export class Leave extends Component {
 
     constructor(props, context) {
@@ -83,9 +87,21 @@ export class Leave extends Component {
 
               console.log(leave_request_data)
 
-              
+              this.resetMyForm();
             }
+
+            
     }
+
+    resetMyForm(e){
+      this.setState({
+        selected_option:"",
+        textarea_text:"",
+        startDate: "",
+        endDate: ""
+      })
+  }
+
     selectOptions(e){
         let value = e.target.value;
         this.setState({

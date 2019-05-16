@@ -3,11 +3,12 @@ import {Card} from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import  './Dailyreport.css';
+import axios from 'axios'
 
 
 // import isAfter from "date-fns/isAfter";
 
-const axios = require('axios');
+// const axios = require('axios');
 
 class Dailyreport extends Component {
 
@@ -27,11 +28,11 @@ class Dailyreport extends Component {
         this.state = {
            
             startDate:new Date(),
-            textinput_text:"",
-            textinput1_text:"",
-            textinput2_text:"",
-            textinput3_text:"",
-            textinput4_text:"",
+            what_was_done_this_day:"",
+            what_is_your_plan_for_the_next_day:"",
+            what_are_your_blockers:"",
+            do_you_have_enough_tasks_for_next_three_days:"",
+            if_you_get_stuck_are_you_still_able_to_work_on_something_else:"",
   
           };
       
@@ -53,78 +54,93 @@ class Dailyreport extends Component {
           onHandleChange(e) {
             this.setState({
                 startDate:e.target.value,
-                textinput_text:e.target.value,
-                textinput1_text:e.target.value,
-                textinput2_text:e.target.value,
-                textinput3_text:e.target.value,
-                textinput4_text:e.target.value,
+                what_was_done_this_day:e.target.value,
+                what_is_your_plan_for_the_next_day:e.target.value,
+                what_are_your_blockers:e.target.value,
+                do_you_have_enough_tasks_for_next_three_days:e.target.value,
+                if_you_get_stuck_are_you_still_able_to_work_on_something_else:e.target.value,
               
             });
           }
+        
 
-        handleSubmit(e){
-            // form.reset();  
-            // var form = e.target;
+          handleSubmit(e) { 
+      
             e.preventDefault();
-              e.target.reset();
-  
-
+           
+           
+               
+              
             let formData ={
                
-                leave_start_data:this.state.startDate,
-                textinput:this.state.textinput_text,
-                textinput1:this.state.textinput1_text,
-                textinput2:this.state.textinput2_text,
-                textinput3:this.state.textinput3_text,
-                textinput4:this.state.textinput4_text,
-
-
-                
-                
-         }
-
-         
+              what_was_done_this_day:this.state.what_was_done_this_day,
+              what_is_your_plan_for_the_next_day:this.state.what_is_your_plan_for_the_next_day,
+              what_are_your_blockers:this.state.what_are_your_blockers,
+              do_you_have_enough_tasks_for_next_three_days:this.state.do_you_have_enough_tasks_for_next_three_days,
+              if_you_get_stuck_are_you_still_able_to_work_on_something_else:this.state.if_you_get_stuck_are_you_still_able_to_work_on_something_else,
+      
+      
+                      
+                      
+               }
+      
+               console.log("formData",formData.requestType)
+               
                   
-
-           
-              axios({
-                method: 'post',
-                url: 'https://jsonplaceholder.typicode.com/posts',
-                data:[formData]
-              })
-              .then(function (response) {
-                console.log(response);
-              })
-  
-        }
+                  const config = {
+                    method: 'POST',
+                    url: '/api/user_daily_report/',
+                    withCredentials: true,
+                    data: formData
+                  }
+                  axios(config).then((response) => {
+                    console.log(response.data)
+                  });
+    
+    
+                  console.log(formData)
+    
+                  this.resetMyForm();
+                }
+    
+            
+        resetMyForm(e){
+          this.setState({
+            what_was_done_this_day:"",
+            what_is_your_plan_for_the_next_day:"",
+            what_are_your_blockers:"",
+            do_you_have_enough_tasks_for_next_three_days:"",
+            if_you_get_stuck_are_you_still_able_to_work_on_something_else:"",
+          })
+      }
   
         textinput(e){
             this.setState({
-                textinput_text:e.target.value,
+              what_was_done_this_day:e.target.value,
             })
         }
         
         textinput1(e){
             this.setState({
-                textinput1_text:e.target.value,
+              what_is_your_plan_for_the_next_day:e.target.value,
             })
         }
 
         textinput2(e){
             this.setState({
-                textinput2_text:e.target.value,
+              what_are_your_blockers:e.target.value,
             })
         }
 
         textinput3(e){
             this.setState({
-                textinput3_text:e.target.value,
+              do_you_have_enough_tasks_for_next_three_days:e.target.value,
             })
         }
 
         textinput4(e){
             this.setState({
-                textinput4_text:e.target.value,
+              if_you_get_stuck_are_you_still_able_to_work_on_something_else:e.target.value,
             })
         }
             
@@ -163,27 +179,27 @@ class Dailyreport extends Component {
 
                 <label for="fname">What was done this day?</label>
                 <input type="text" id="fname" ref="text" onChange={this.textinput}
-                 value={this.state.textinput_text} name="fname"/>
+                 value={this.state.what_was_done_this_day} name="fname"/>
 
 
                 <label for="lname">What is your plan for next day?</label>
                 <input type="text" id="lname" ref="text1" onChange={this.textinput1}
-                 value={this.state.textinput1_text} name="lname"/>
+                 value={this.state.what_is_your_plan_for_the_next_day} name="lname"/>
 
 
                 <label for="fname">What are your blockers?</label>
                 <input type="text" id="fname" ref="text2" onChange={this.textinput2}
-                 value={this.state.textinput2_text} name="fname"/>
+                 value={this.state.what_are_your_blockers} name="fname"/>
 
 
                 <label for="lname">Do you have enough tasks to keep you busy for the next three days?</label>
                 <input type="text" id="lname" ref="text3" onChange={this.textinput3}
-                 value={this.state.textinput3_text} name="lname"/>
+                 value={this.state.do_you_have_enough_tasks_for_next_three_days} name="lname"/>
 
 
                 <label for="fname">If you get stuck are you still able to work on something else?</label>
                 <input type="text" id="fname" ref="text4" onChange={this.textinput4}
-                 value={this.state.textinput4_text} name="fname"/>
+                 value={this.state.if_you_get_stuck_are_you_still_able_to_work_on_something_else} name="fname"/>
 
 
                 <button type="submit" className="btn btn-primary">Submit</button>

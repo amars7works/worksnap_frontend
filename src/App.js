@@ -5,7 +5,7 @@ import Total from './components/Leave/Total';
 import Approval from './components/Admin/Approval';
 import Login from './pages/Login'
 import Dailyreport from './components/Dailyreport/Dailyreport'
-import Employees from './components/Employees_List/Header'
+import Employees from './components/Employees_List/Employess_list'
 
 class App extends React.Component {
 

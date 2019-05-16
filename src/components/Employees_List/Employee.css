@@ -1,13 +1,13 @@
 
-.card{
+.employCard{
     margin-left: 10px !important;
     margin-bottom: 10px !important;
     text-align: center;
     border-radius: 10px;
 }
 .row{
-    margin-right:0px; 
- margin-left: 0px;
+margin-right:0px !important; 
+margin-left: 0px !important;
 }
 .card img{
     margin: auto;

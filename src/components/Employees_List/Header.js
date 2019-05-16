@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import {Nav} from 'react-bootstrap'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"
+import  './Employee.css';
+
+import axios from 'axios'
 
 export class Header extends Component {
     constructor(props) {
@@ -9,6 +12,8 @@ export class Header extends Component {
     
         this.state = {
             startDate:new Date(),
+            posts:[],
+
         }
     }
 
@@ -22,7 +27,26 @@ export class Header extends Component {
       };
     
       handleChangeStart = startDate => this.handleChange({ startDate });
-    
+      
+componentDidMount(){
+  const config = {
+      url: "/api/get_emp_list/",
+      method: 'GET',
+      withCredentials: true,
+
+  }
+  axios(config)
+  .then((res) => {
+      this.setState({
+          posts: res.data
+      });
+          // this.setState({personDetails: data.return[0], loading:false });
+
+      console.log(res.data)
+  });
+  
+}
+
   render() {
     return (
       <div>
@@ -69,6 +93,8 @@ export class Header extends Component {
           </Nav>
          </div>
          </div>
+
+     
       </div>
     )
   }

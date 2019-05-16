@@ -11,6 +11,7 @@ input[type=text] {
 }
 .card{
     border-radius: 20px;
+    text-align: none !important;
 }
 label{
     font-weight: bold;
