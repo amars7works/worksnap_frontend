@@ -1,0 +1,29 @@
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #C8E5FD;
+  }
+.react-datepicker-wrapper{
+    float: right;
+}
+.card{
+    border-radius: 20px;
+    text-align: none !important;
+}
+label{
+    font-weight: bold;
+}
+.btn-primary{
+    border-radius: 20px;
+    float: right;
+    margin-top: 25px;
+}
+
+.card-header {
+    
+    background-color:none !important; 
+    border-bottom:none !important;
+}

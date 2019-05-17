@@ -74,7 +74,7 @@ export class Nightshift extends Component {
              
               axios({
                 method: 'post',
-                url: 'http://worksnaps.s7works.io/apply_leave/',
+                url: '/api/apply_leave/',
                 data:[leave_request_data]
                 
               })
