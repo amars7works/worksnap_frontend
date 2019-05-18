@@ -19,6 +19,8 @@ class Approval extends Component {
         }
 
         this.declineRequest = this.declineRequest.bind(this)
+        this.status = this.status.bind(this);
+        this.approvedRequest = this.approvedRequest.bind(this)
     }
     
 componentDidMount(){
@@ -40,15 +42,14 @@ componentDidMount(){
 
 }
 
-status(){
+status(status){
     const config1 = {
        
         method: 'PUT',
         url: '/api/get_requests/',
         withCredentials: true,
         data:{
-          leave_status : "Rejected",
-          leave_status : "Approved"
+          leave_status : status,
 
         }
         
@@ -66,6 +67,7 @@ status(){
                 
             
             })
+            this.status("Approved")
         }
 
 declineRequest(e){
@@ -74,9 +76,11 @@ declineRequest(e){
       
         isShow : true,
         decline_Status:"Rejected"
+
+        
     
     })
-    
+    this.status("Rejected")
     
     }
 
