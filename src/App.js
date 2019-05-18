@@ -3,10 +3,13 @@ import './App.css';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Total from './components/Leave/Total';
 import Approval from './components/Admin/Approval';
-import Login from './pages/Login'
+import Login from './pages/Login';
+import EmployeeReport from './pages/EmployeeReport';
+import Employee from './components/Employee/Employee';
 import Dailyreport from './components/Dailyreport/Dailyreport'
 import Employees from './components/Employees_List/Employess_list'
 import NotFound from './pages/Page404'
+
 
 class App extends React.Component {
 
@@ -26,6 +29,7 @@ class App extends React.Component {
       <Router>
         <Route exact path='/frd/approve/' component={Approval} />
         <Route exact path='/frd/employee/' component={Employees} />
+        <Route exact path='/frd/employees/' component={Employee} />
         <Route path="" component={NotFound} />
 
       </Router>
@@ -35,13 +39,11 @@ class App extends React.Component {
   handleStaffRoutes() {
     return (
       <Router>
-
-
-        <Route path="" component={NotFound} />
-
+      
+        <Route exact path='/frd/emp/report/' component={EmployeeReport}  />
         <Route exact path='/frd/requests/' component={Total} />
         <Route exact path='/frd/dailyreport/' component={Dailyreport} />
-
+        <Route path="" component={NotFound} />
 
       </Router>
     )
@@ -69,6 +71,7 @@ class App extends React.Component {
   render() {   
     return (
       <div className="App">
+
          {/* {!this.state.pageNotFound && this.handleNotFound()} */}
 
         {!this.state.loggedIn && this.handleLoggedOutRoutes()}

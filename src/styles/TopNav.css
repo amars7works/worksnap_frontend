@@ -1,0 +1,796 @@
+img.logo {
+    width: 130px;
+    height: 45px;
+}
+.logo-img {
+    display: inline-block;
+    margin-left: 70px;
+}
+div#threelines {
+    display: inline-block;
+    vertical-align: middle;
+}
+.Topnavbar {
+    padding: 10px;
+    background: #fff;
+    width: 100vw;
+}
+.right-topnavbar li.nav-item {
+    display: inline-block;
+    margin-left:25px;
+}
+.right-maintopdiv {
+    display: inline-block;
+    position: absolute;
+}
+.main-topleftbar {
+    display: inline-block;
+    width: 20vw;
+}
+.right-topnavbar {
+   margin-bottom: 0;
+   padding-left: 0;
+}
+.search-text {
+    display: inline-block !important;
+    width: 250px;
+    height: 45px;
+    border-radius: 25px;
+    background-color: #ecf2f7;
+    border: none;
+    font-size: 15px;
+}
+.fa-bell:before {
+    content: "\f0f3";
+    width: 16px;
+    height: 16px;
+}
+li.nav-item.search-li {
+    width: 47vw;
+}
+.image_a {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 0;
+}
+.nav-link {
+  padding: 0;
+ margin-left: 0px;
+
+}
+
+
+/* left vertical side navbar  */
+.nav {
+    display: block !important;
+    width: 20vw;
+    height:100vh;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+}
+
+@media  (max-width: 359px) and (min-width:320px)
+{
+    img.logo {
+        width: 35px;
+        height: 25px;
+        display: inline-flex;
+        position: absolute;
+        margin-top: -10px;
+    }
+    .logo-img {
+          display: inline-block;
+    margin-left: 18px;
+    position: absolute;
+    margin-top: 19px;
+}
+.fa-2x {
+    font-size: 2em;
+    margin-top: 6px;
+}
+
+.collapse:not(.show) {
+    display: inline-flex;
+   
+}
+    div#threelines {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .Topnavbar {
+        padding: 10px;
+        background: #fff;
+
+        height: 55px;
+        width: 654px;
+        padding-top: 1px;
+        padding-bottom: 5px;
+        display: inline-flex;
+    }
+    .right-topnavbar li.nav-item {
+        display: inline-block;
+        margin-left:25px;
+    }
+    .right-maintopdiv {
+        display: inline-block;
+    }
+    .main-topleftbar {
+        display: inline-block;
+        width: 65vw;
+    }
+    .right-topnavbar {
+       margin-bottom: 0;
+       padding-left: 0;
+       width:195vw;
+    }
+    .search-text {
+        display: inline-block !important;
+        width: 120px;
+        height: 20px;
+        border-radius: 25px;
+        background-color: #ecf2f7;
+        border: none;
+        font-size: 15px;
+        margin-left: 60px;
+    }
+
+    .fa-bell:before {
+        content: "\f0f3";
+        width: 16px;
+        height: 16px;
+    }
+    li.nav-item.search-li {
+        width: 45vw;
+    }
+    .image_a {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        margin: 0;
+    }
+    .nav-link {
+      padding: 0;
+          margin-left: 0px;
+
+    }
+    
+    
+    /* left vertical side navbar  */
+    .nav {
+        display: block !important;
+        width: 32vw;
+        height:100vh;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.16);
+        background-color: #ffffff;
+    }
+}
+@media  (max-width: 374px) and (min-width:360px)
+{
+    img.logo {
+        width: 25px;
+        height: 25px;
+        display: inline-flex;
+        position: absolute;
+        margin-top: -10px;
+    }
+    .logo-img {
+          display: inline-block;
+    margin-left: 18px;
+    position: absolute;
+    margin-top: 19px;
+}
+.fa-2x {
+    font-size: 2em;
+    margin-top: 6px;
+}
+
+.collapse:not(.show) {
+    display: inline-flex;
+   
+}
+    div#threelines {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .Topnavbar {
+        padding: 10px;
+        background: #fff;
+
+        height: 55px;
+        width: 456px;
+        padding-top: 1px;
+        padding-bottom: 5px;
+        display: inline-flex;
+    }
+    .right-topnavbar li.nav-item {
+        display: inline-block;
+        margin-left:21px;
+    }
+    .right-maintopdiv {
+        display: inline-block;
+    }
+    .main-topleftbar {
+        display: inline-block;
+        width: 20vw;
+    }
+    .right-topnavbar {
+       margin-bottom: 0;
+       padding-left: 15;
+       width:418px;
+    }
+    .search-text {
+        display: inline-block !important;
+        width: 120px;
+        height: 20px;
+        border-radius: 25px;
+        background-color: #ecf2f7;
+        border: none;
+        font-size: 15px;
+        margin-left: 60px;
+        margin-top: 10px;
+    }
+
+    .fa-bell:before {
+        content: "\f0f3";
+        width: 16px;
+        height: 16px;
+    }
+    li.nav-item.search-li {
+        width: 55vw;
+    }
+    .image_a {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        margin: 0;
+    }
+    .nav-link {
+      padding: 0px;
+    }
+    a.nav-link {
+    padding: 0px;
+        margin-left: 8px;
+}
+    a.navbar-brand {
+    margin-left: 0px;
+}
+    
+    /* left vertical side navbar  */
+    .nav {
+        display: block !important;
+        width: 30vw;
+        height:100vh;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.16);
+        background-color: #ffffff;
+        width: 25vw;
+    }
+
+}
+@media  (max-width: 500px) and (min-width:411px)
+{
+    img.logo {
+        width: 25px;
+        height: 25px;
+        display: inline-flex;
+        position: absolute;
+        margin-top: -10px;
+    }
+    .logo-img {
+          display: inline-block;
+    margin-left: 18px;
+    position: absolute;
+    margin-top: 19px;
+}
+.fa-2x {
+    font-size: 2em;
+    margin-top: 6px;
+}
+
+.collapse:not(.show) {
+    display: inline-flex;
+   
+}
+    div#threelines {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .Topnavbar {
+        padding: 10px;
+        background: #fff;
+
+        height: 55px;
+        width: 456px;
+        padding-top: 1px;
+        padding-bottom: 5px;
+        display: inline-flex;
+    }
+    .right-topnavbar li.nav-item {
+        display: inline-block;
+        margin-left:21px;
+    }
+    .right-maintopdiv {
+        display: inline-block;
+    }
+    .main-topleftbar {
+        display: inline-block;
+        width: 20vw;
+    }
+    .right-topnavbar {
+       margin-bottom: 0;
+       padding-left: 15;
+       width:418px;
+    }
+    .search-text {
+        display: inline-block !important;
+        width: 120px;
+        height: 20px;
+        border-radius: 25px;
+        background-color: #ecf2f7;
+        border: none;
+        font-size: 15px;
+        margin-left: 60px;
+        margin-top: 10px;
+    }
+
+    .fa-bell:before {
+        content: "\f0f3";
+        width: 16px;
+        height: 16px;
+    }
+    li.nav-item.search-li {
+        width: 55vw;
+    }
+    .image_a {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        margin: 0;
+    }
+    .nav-link {
+      padding: 0px;
+          font-size: 8px;
+    }
+    a.nav-link {
+    padding: 0px;
+     margin-left: 8px;
+}
+    a.navbar-brand {
+    margin-left:5px;
+}
+    
+    /* left vertical side navbar  */
+    .nav {
+        display: block !important;
+        width: 30vw;
+        height:100vh;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.16);
+        background-color: #ffffff;
+        width: 25vw;
+    }
+
+}
+
+@media  (max-width: 400px) and (min-width:375px)
+{
+    img.logo {
+        width: 25px;
+        height: 25px;
+        display: inline-flex;
+        position: absolute;
+        margin-top: -10px;
+    }
+    .logo-img {
+          display: inline-block;
+    margin-left: 18px;
+    position: absolute;
+    margin-top: 19px;
+}
+.fa-2x {
+    font-size: 2em;
+    margin-top: 6px;
+}
+
+.collapse:not(.show) {
+    display: inline-flex;
+   
+}
+    div#threelines {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .Topnavbar {
+        padding: 10px;
+        background: #fff;
+
+        height: 55px;
+        width: 456px;
+        padding-top: 1px;
+        padding-bottom: 5px;
+        display: inline-flex;
+    }
+    .right-topnavbar li.nav-item {
+        display: inline-block;
+        margin-left:17px;
+    }
+    .right-maintopdiv {
+        display: inline-block;
+
+
+    }
+    .main-topleftbar {
+        display: inline-block;
+        width: 20vw;
+    }
+    .right-topnavbar {
+       margin-bottom: 0;
+
+       padding-left: 15;
+
+       width:418px;
+    }
+    .search-text {
+        display: inline-block !important;
+        width: 120px;
+        height: 20px;
+        border-radius: 25px;
+        background-color: #ecf2f7;
+        border: none;
+        font-size: 15px;
+
+        margin-left: 60px;
+        margin-top: 10px;
+    }
+
+    .fa-bell:before {
+        content: "\f0f3";
+        width: 16px;
+        height: 16px;
+    }
+    li.nav-item.search-li {
+        width: 55vw;
+    }
+    .image_a {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        margin: 0;
+    }
+    .nav-link {
+      padding: 0px;
+    }
+    a.nav-link {
+    padding: 0px;
+    margin-left: 8px;
+}
+    a.navbar-brand {
+    margin-left: 5px;
+    font-size: 15px;
+}
+    
+    /* left vertical side navbar  */
+    .nav {
+        display: block !important;
+        width: 30vw;
+        height:100vh;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.16);
+        background-color: #ffffff;
+        width: 25vw;
+    }
+
+}
+@media  (max-width: 800px) and (min-width:768px)
+{
+    img.logo {
+        width: 40px;
+        height: 28px;
+        display: inline-flex;
+        position: absolute;
+        margin-top: -10px;
+    }
+    .logo-img {
+          display: inline-block;
+    margin-left: 18px;
+    position: absolute;
+    margin-top: 19px;
+}
+.fa-2x {
+    font-size: 2em;
+    margin-top: 6px;
+}
+
+.collapse:not(.show) {
+    display: inline-flex;
+   
+}
+    div#threelines {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .Topnavbar {
+        padding: 10px;
+        background: #fff;
+
+        height: 55px;
+        width: 100vw;
+        padding-top: 1px;
+        padding-bottom: 5px;
+        display: inline-flex;
+    }
+    .right-topnavbar li.nav-item {
+        display: inline-block;
+        margin-left:17px;
+    }
+    .right-maintopdiv {
+        display: inline-block;
+    }
+    .main-topleftbar {
+        display: inline-block;
+        width: 20vw;
+    }
+    .right-topnavbar {
+       margin-bottom: 0;
+       padding-left: 15;
+       width:75vw;
+    }
+    .search-text {
+        display: inline-block !important;
+        width: 120px;
+        height: 20px;
+        border-radius: 25px;
+        background-color: #ecf2f7;
+        border: none;
+        font-size: 15px;
+        margin-left: 102px;
+        margin-top: 10px;
+    }
+
+  
+    .fa-bell:before {
+        content: "\f0f3";
+        width: 16px;
+        height: 16px;
+    }
+    li.nav-item.search-li {
+        width: 55vw;
+    }
+    .image_a {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        margin: 0;
+    }
+    .nav-link {
+
+      padding: 0px;
+    }
+    a.nav-link {
+    padding: 0px;
+    margin-left: 8px;
+}
+    a.navbar-brand {
+    margin-left: 10px;
+    font-size: 10px;
+    width:30vw;
+}
+    
+    /* left vertical side navbar  */
+    .nav {
+        display: block !important;
+        width: 30vw;
+        height:100vh;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.16);
+        background-color: #ffffff;
+        width: 20vw;
+    }
+
+}
+@media  (max-width: 1100px) and (min-width:1024px)
+{
+    img.logo {
+        width: 40px;
+        height: 28px;
+        display: inline-flex;
+        position: absolute;
+        margin-top: -10px;
+    }
+    .logo-img {
+          display: inline-block;
+    margin-left: 18px;
+    position: absolute;
+    margin-top: 19px;
+}
+.fa-2x {
+    font-size: 2em;
+    margin-top: 6px;
+}
+
+.collapse:not(.show) {
+    display: inline-flex;
+   
+}
+    div#threelines {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .Topnavbar {
+        padding: 10px;
+        background: #fff;
+
+        height: 55px;
+        width: 100vw;
+        padding-top: 1px;
+        padding-bottom: 5px;
+        display: inline-flex;
+    }
+    .right-topnavbar li.nav-item {
+        display: inline-block;
+        margin-left:17px;
+    }
+    .right-maintopdiv {
+        display: inline-block;
+    }
+    .main-topleftbar {
+        display: inline-block;
+        width: 20vw;
+    }
+    .right-topnavbar {
+       margin-bottom: 0;
+       padding-left: 15;
+       width:75vw;
+    }
+    .search-text {
+        display: inline-block !important;
+        width: 120px;
+        height: 20px;
+        border-radius: 25px;
+        background-color: #ecf2f7;
+        border: none;
+        font-size: 15px;
+        margin-left: 102px;
+        margin-top: 10px;
+    }
+
+    .fa-bell:before {
+        content: "\f0f3";
+        width: 16px;
+        height: 16px;
+    }
+    li.nav-item.search-li {
+        width: 55vw;
+    }
+    .image_a {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        margin: 0;
+    }
+    .nav-link {
+      padding: 0px;
+    }
+    a.nav-link {
+    padding: 0px;
+    margin-left: 8px;
+}
+    a.navbar-brand {
+    margin-left: 10px;
+    font-size: 10px;
+    width:30vw;
+}
+    
+    /* left vertical side navbar  */
+    .nav {
+        display: block !important;
+        width: 30vw;
+        height:100vh;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.16);
+        background-color: #ffffff
+        
+    }
+
+}
+@media  (max-width: 600px) and (min-width:500px)
+{
+    img.logo {
+        width: 40px;
+        height: 28px;
+        display: inline-flex;
+        position: absolute;
+        margin-top: -10px;
+    }
+    .logo-img {
+          display: inline-block;
+    margin-left: 18px;
+    position: absolute;
+    margin-top: 19px;
+}
+.fa-2x {
+    font-size: 2em;
+    margin-top: 6px;
+}
+
+.collapse:not(.show) {
+    display: inline-flex;
+   
+}
+    div#threelines {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .Topnavbar {
+        padding: 10px;
+        background: #fff;
+
+        height: 55px;
+        width: 100vw;
+        padding-top: 1px;
+        padding-bottom: 5px;
+        display: inline-flex;
+    }
+    .right-topnavbar li.nav-item {
+        display: inline-block;
+        margin-left:17px;
+    }
+    .right-maintopdiv {
+        display: inline-block;
+    }
+    .main-topleftbar {
+        display: inline-block;
+        width: 20vw;
+    }
+    .right-topnavbar {
+       margin-bottom: 0;
+       padding-left: 15;
+       width:75vw;
+    }
+    .search-text {
+        display: inline-block !important;
+        width: 120px;
+        height: 20px;
+        border-radius: 25px;
+        background-color: #ecf2f7;
+        border: none;
+        font-size: 15px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
+    .fa-bell:before {
+        content: "\f0f3";
+        width: 16px;
+        height: 16px;
+    }
+    li.nav-item.search-li {
+        width: 42vw;
+    }
+    .image_a {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        margin: 0;
+    }
+    .nav-link {
+      padding: 0px;
+    }
+    a.nav-link {
+    padding: 0px;
+    margin-left: 8px;
+}
+    a.navbar-brand {
+    margin-left: 10px;
+    font-size: 10px;
+    width:21vw;
+    margin-left: 50px;
+}
+    
+    /* left vertical side navbar  */
+    .nav {
+        display: block !important;
+        width: 30vw;
+        height:100vh;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.16);
+        background-color: #ffffff
+        
+    }
+
+}
