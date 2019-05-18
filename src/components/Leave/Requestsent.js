@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+
+
+
+
 export class Requestsent extends Component {
     constructor(props, context) {
         super(props, context);
@@ -10,7 +14,7 @@ export class Requestsent extends Component {
     }
     componentDidMount(){
         const config = {
-            url: "/api/get_requests/",
+            url: "/api/get_leave_status/",
             method: 'GET'
         }
         axios(config)
@@ -25,15 +29,9 @@ export class Requestsent extends Component {
     return (
       <div>
              <div className="col-md-11">
-                  <h4 className = "text-bold" style={{textAlignLast:'Left',}}>Request Sent Status </h4>
-                  <p style={{textAlignLast:'Left', display:'inline-block'}}>Leave Application :  {this.props.intialText} </p> 
-                  {/* <span style={{fontSize:'12px', textAlignLast:'right'}} 
-                  data={this.state.posts} 
-                  value = {this.props.status}
-                   onChange ={this.leaveRequestStatus}>  </span> */}
-                   <span>
-    
-                   </span>
+                  <h4 className = "text-bold">Request Sent Status </h4>
+                  <p>Leave Application : {this.state.posts}</p> 
+                
                 </div>
       </div>
     )

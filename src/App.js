@@ -8,25 +8,78 @@ import EmployeeReport from './pages/EmployeeReport';
 import Employee from './components/Employee/Employee';
 import Dailyreport from './components/Dailyreport/Dailyreport'
 import Employees from './components/Employees_List/Employess_list'
+import NotFound from './pages/Page404'
 
 
 class App extends React.Component {
 
-  render() {
+  constructor() {
+    super();
+    this.state = {
+      AppAdminAuthenticated: false,
+      staffAdminAuthenticated: false,
+      staffAuthenticated: false,
+      loggedIn: false,
+      pageNotFound: false,
+    };
+  }
+
+  handleAdminRoutes() {
+    return(
+      <Router>
+        <Route exact path='/frd/approve/' component={Approval} />
+        <Route exact path='/frd/employee/' component={Employees} />
+        <Route exact path='/frd/employees/' component={Employee} />
+        <Route path="" component={NotFound} />
+
+      </Router>
+    )
+  }
+
+  handleStaffRoutes() {
+    return (
+      <Router>
+      
+        <Route exact path='/frd/emp/report/' component={EmployeeReport}  />
+        <Route exact path='/frd/requests/' component={Total} />
+        <Route exact path='/frd/dailyreport/' component={Dailyreport} />
+        <Route path="" component={NotFound} />
+
+      </Router>
+    )
+  }
+
+  handleLoggedOutRoutes() {
+    return (
+      <Router>
+          
+
+          <Route exact path='/frd/sign_in' component={Login} />
+          <Route exact path='/' render={() => (<Redirect to="/frd/sign_in/" />)} /> 
+
+      </Router>
+    )
+  }
+  // handleNotFound(){
+  //   return(
+  //     <Router>
+  //          <Route component={NotFound} />
+  //     </Router>
+  //   )
+  // }
+
+  render() {   
     return (
       <div className="App">
-        <Router>
-	  <Route exact path='/frd/sign_in' component={Login} />
-	  <Route exact path='/' render={() => (<Redirect to="/frd/sign_in/" />)} />
-	  <Route exact path='/frd/emp/report/' component={EmployeeReport}  />
-        <Route exact path='/frd/requests/' component={Total} />
-        <Route exact path='/frd/approve/' component={Approval} />
-        <Route exact path='/Employee/' component={Employee} />
-    
-          <Route exact path='/frd/dailyreport/' component={Dailyreport} />
-          <Route exact path='/frd/employee/' component={Employees} />
-        </Router>
 
+         {/* {!this.state.pageNotFound && this.handleNotFound()} */}
+
+        {!this.state.loggedIn && this.handleLoggedOutRoutes()}
+
+        {this.state.staffAuthenticated && this.handleStaffRoutes()}
+
+        {this.state.AppAdminAuthenticated && this.handleAdminRoutes()}
+        
       </div>)
   }
 }

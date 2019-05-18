@@ -6,7 +6,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import {Input} from 'reactstrap';
 import axios from 'axios'
 
-// const axios = require('axios');
 
 
 export class Leave extends Component {
@@ -32,7 +31,6 @@ export class Leave extends Component {
           textarea_text:"",
           startDate: new Date(),
           endDate: new Date(),
-          // leaveRequestStatus:"pending",
         };
       }
 
@@ -113,11 +111,7 @@ export class Leave extends Component {
             textarea_text:e.target.value,
         })
     }
-    // leaveRequestStatus(){
-    //   this.setState({
-    //     leaveStatusMessage: "pending"  
-    //   })
-    // }
+    
     
       handleClose() {
         this.setState({ show: false });
@@ -126,13 +120,7 @@ export class Leave extends Component {
       handleShow() {
         this.setState({ show: true });
       }
-      // renderstatus() {
-
-      //   return(
-      //     <text>pending</text>
-          
-      //   )
-      // }
+      
       
 
      
@@ -224,22 +212,7 @@ export class Leave extends Component {
 
                  <br/>
                  <br/>
-                 <br/>
-
-
-                 {/* <div className="col-md-5 leavestatus">
-                  <h5 className = "text-bold"> </h5>
-                  <p>Leave Application</p> 
-                  <span style={{fontSize:'12px'}} 
-                  data={this.state.posts} 
-                  value = {this.status}
-                   onChange ={this.leaveRequestStatus}> pending </span>
-                
-                </div> */}
-                
-                
-                
-                
+                 <br/> 
             </div>
            
         </div>
@@ -248,7 +221,7 @@ export class Leave extends Component {
             <Button variant="secondary" style={{borderRadius:'20px'}} onClick={this.handleClose}>
               Close
             </Button>
-            <button type="submit" className="btn btn-success form-control col-sm-2" onClick={(e) => this.props.Clicked("pending")} style={{borderRadius:'20px'}} >Submit</button>
+            <button type="submit" className="btn btn-success form-control col-sm-2" style={{borderRadius:'20px'}} >Submit</button>
           </ModalFooter>
             </form>
 

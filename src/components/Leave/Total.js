@@ -11,30 +11,31 @@ class Total extends Component {
       intialText:"Initial text"
     }
   }
-  Clicked =(text) => {
-    this.setState({
-      intialText: text
-    })
-}
+ 
 
   render() {
     return (
       <div>
         <div className ="col-md-4 leave-request" style={{borderRadius:'2px solid black'}}>
-    <Leave intialText ={this.state.intialText} Clicked = {this.Clicked}/>
+    <Leave/>
     <br/>
     <br/>
     <br/>
-    <Works intialText ={this.state.intialText} Clicked = {this.Clicked} />
+    <Works/>
     <br/>
     <br/>
     <br/>
-    <Nightshift intialText ={this.state.intialText} Clicked = {this.Clicked} />
+    <Nightshift/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
     </div>
 
     <br/>
     <div className = "col-md-4 sent-status">
-    <Requestsent intialText = {this.state.intialText} />
+    <Requestsent/>
     
 
     </div>
