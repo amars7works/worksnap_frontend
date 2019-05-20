@@ -82,10 +82,12 @@ componentDidMount(){
           <div className="col-md-6 col-sm-12">
           <Nav variant="tabs" className="justify-content-end" defaultActiveKey="/home">
                 <Nav.Item>
-                <Nav.Link href="/total">Total</Nav.Link>
+                <Nav.Link href="/frd/employee/">Total</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                <Nav.Link href="/Off_today">Off today</Nav.Link>
+                <Nav.Link href ="/Off_today">Off today</Nav.Link>
+                {/* <NavLink to='/Off_today' activeClassName="active">1</NavLink> */}
+
                 </Nav.Item>
                 <Nav.Item>
                 <Nav.Link eventKey="link-2">Work from home</Nav.Link>

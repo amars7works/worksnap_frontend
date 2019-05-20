@@ -181,25 +181,30 @@ class Dailyreport extends Component {
                 <input type="text" id="fname" ref="text" onChange={this.textinput}
                  value={this.state.what_was_done_this_day} name="fname"/>
 
+<br/>
 
                 <label for="lname">What is your plan for next day?</label>
                 <input type="text" id="lname" ref="text1" onChange={this.textinput1}
                  value={this.state.what_is_your_plan_for_the_next_day} name="lname"/>
 
+<br/>
 
                 <label for="fname">What are your blockers?</label>
                 <input type="text" id="fname" ref="text2" onChange={this.textinput2}
                  value={this.state.what_are_your_blockers} name="fname"/>
 
+<br/>
 
                 <label for="lname">Do you have enough tasks to keep you busy for the next three days?</label>
                 <input type="text" id="lname" ref="text3" onChange={this.textinput3}
                  value={this.state.do_you_have_enough_tasks_for_next_three_days} name="lname"/>
 
+<br/>
 
                 <label for="fname">If you get stuck are you still able to work on something else?</label>
                 <input type="text" id="fname" ref="text4" onChange={this.textinput4}
                  value={this.state.if_you_get_stuck_are_you_still_able_to_work_on_something_else} name="fname"/>
+ <br/>
 
 
                 <button type="submit" className="btn btn-primary">Submit</button>

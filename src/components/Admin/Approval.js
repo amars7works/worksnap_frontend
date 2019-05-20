@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
-import {Card,Button,Nav} from 'react-bootstrap';
+import {Card,Button,Nav,ButtonToolbar,Modal} from 'react-bootstrap';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import "./Approval.css"
+
 import axios from 'axios'
+import Approve_history from './Approve_history';
+import Rejected_history from './Rejected_history';
 
 
 class Approval extends Component {
@@ -14,7 +19,8 @@ class Approval extends Component {
             isShow : false,
             declineRequest:"rejected",
             decline_Status:"Rejected",
-            approved_Status:"Approved"
+            approved_Status:"Approved",
+            smShow: false,
              
         }
 
@@ -60,9 +66,10 @@ status(status){
     console.log(config1)
 }
     
-        approvedRequest(e){
-            this.setState({
-                isShow : true,
+ approvedRequest(e){
+    this.setState({
+        
+        isShow : true,
                 approved_Status:"Approved"
                 
             
@@ -87,7 +94,7 @@ declineRequest(e){
   
 
   render() {
-    
+
 
     return (
       <div>
@@ -138,13 +145,20 @@ declineRequest(e){
                     </Card.Footer>
                 </Card>
 )}
-         
+
 
        
        </div>
-                
-       </div> 
-      </div>
+       </div>
+       <div className="col-md-12">
+       <Approve_history/>
+       <Rejected_history/>
+       </div>
+       
+
+       </div>
+
+
     )
   }
 }

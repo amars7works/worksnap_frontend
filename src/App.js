@@ -54,8 +54,10 @@ class App extends React.Component {
       <Router>
           
 
-          <Route exact path='/frd/sign_in' component={Login} />
+          <Route exact path={'/frd/sign_in'} component={Login} />
           <Route exact path='/' render={() => (<Redirect to="/frd/sign_in/" />)} /> 
+          {/* <Route exact path="" component={NotFound} /> */}
+
 
       </Router>
     )
