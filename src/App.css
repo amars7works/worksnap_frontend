@@ -20,3 +20,13 @@ body{
   padding-left: 10px;
   width: 100%;
 }
+
+.right-main-content {
+    float: right;
+    width: 80vw;
+    position: absolute;
+}
+.right-content {
+    position: absolute;
+    margin-left: 20vw;
+}
