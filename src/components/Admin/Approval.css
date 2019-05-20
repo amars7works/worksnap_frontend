@@ -1,3 +1,6 @@
+body{
+    background-color: #ECF2F7;
+}
 .employrequest{
     margin-left: 0px !important;
     margin-right: 0px !important;
@@ -15,4 +18,55 @@
 }
 .btn{
     margin-right: 15px;
+}
+.Approve_history{
+background-color: white;
+margin-left: 10px;
+margin-top: 15px;
+
+}
+.Rejected_history{
+    margin-left: 100px;
+    background-color: white;
+    margin-top: 15px;
+
+
+}
+input[type=text] {
+    width: 60%;
+    height: 10px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    float: right;
+    border-bottom: 2px solid #C8E5FD;
+  }
+.header_name{
+    float: left;
+}  
+.rounded-circle{
+    /* float: left; */
+    width: 50px;
+     height:50px;
+}
+h6{
+    
+    /* float: left; */
+    padding: 15px;
+}
+.history{
+    border-bottom: 2px #EBEBEB;
+    width: 100%;
+    float:none;
+    /* background-color:black; */
+}
+.btn-toolbar{
+    float:right;
+    margin-top: -50px;
+}
+.btn-primary {
+    color:none !important; 
+    background-color: none !important;
+     border-color: none !important;
 }

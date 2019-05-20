@@ -11,8 +11,9 @@ export class Employess_list extends Component {
       <div>
         <Header/>
         <Router>
-          <Route exact path='/frd/Off_today/' component={Off_today} />
           <Route exact path='/frd/employee/' component={Employees} />
+          <Route exact path='/Off_today/' component={Off_today} />
+
         </Router>
       </div>
     )

@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
-
-
-
 export class Requestsent extends Component {
     constructor(props, context) {
         super(props, context);
