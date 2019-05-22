@@ -8,8 +8,17 @@ import EmployeeReport from './pages/EmployeeReport';
 import Employee from './components/Employee/Employee';
 import Dailyreport from './components/Dailyreport/Dailyreport'
 import Employees from './components/Employees_List/Employess_list'
-import NotFound from './pages/Page404'
+//import NotFound from './pages/Page404'
+import axios from 'axios';
 
+function authStatus() {
+  const config = {
+    url: '/api/auth_status/',
+    method: 'GET',
+    withCredentials: true 
+  }
+  return axios(config);
+}
 
 class App extends React.Component {
 
@@ -20,17 +29,40 @@ class App extends React.Component {
       staffAdminAuthenticated: false,
       staffAuthenticated: false,
       loggedIn: false,
-      pageNotFound: false,
+      pageNotFound: false
     };
   }
+
+  async componentDidMount() {
+    authStatus().then((response) => {
+      if(response.data.user_status) {
+        if(response.data.is_superuser) {
+          this.setState({loggedIn: true, AppAdminAuthenticated: true})
+        } else {
+          this.setState({loggedIn: true, staffAuthenticated: true})
+        }
+      } else {
+        this.setState({
+          AppAdminAuthenticated: false,
+          staffAdminAuthenticated: false,
+          staffAuthenticated: false,
+          loggedIn: false
+        })
+      }
+    })
+  }
+
+  
 
   handleAdminRoutes() {
     return(
       <Router>
+        <Route exact path='/frd/emp/report/' component={EmployeeReport}  />
         <Route exact path='/frd/approve/' component={Approval} />
         <Route exact path='/frd/employee/' component={Employees} />
         <Route exact path='/frd/employees/' component={Employee} />
-        <Route path="" component={NotFound} />
+        <Route exact path='/' render={() => (<Redirect to="/frd/employees/" />)} /> 
+        {/* <Route path="" component={NotFound} /> */}
 
       </Router>
     )
@@ -39,11 +71,10 @@ class App extends React.Component {
   handleStaffRoutes() {
     return (
       <Router>
-      
-        <Route exact path='/frd/emp/report/' component={EmployeeReport}  />
         <Route exact path='/frd/requests/' component={Total} />
         <Route exact path='/frd/dailyreport/' component={Dailyreport} />
-        <Route path="" component={NotFound} />
+        <Route exact path='/' render={() => (<Redirect to="/frd/emp/requests/" />)} /> 
+        {/* <Route path="" component={NotFound} /> */}
 
       </Router>
     )
@@ -52,23 +83,12 @@ class App extends React.Component {
   handleLoggedOutRoutes() {
     return (
       <Router>
-          
-
           <Route exact path={'/frd/sign_in'} component={Login} />
           <Route exact path='/' render={() => (<Redirect to="/frd/sign_in/" />)} /> 
           {/* <Route exact path="" component={NotFound} /> */}
-
-
       </Router>
     )
   }
-  // handleNotFound(){
-  //   return(
-  //     <Router>
-  //          <Route component={NotFound} />
-  //     </Router>
-  //   )
-  // }
 
   render() {   
     return (

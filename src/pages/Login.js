@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Form,Button} from 'react-bootstrap';
 import '../styles/Login.css';
-import axios from 'axios'
+import axios from 'axios';
+// import { browserHistory } from 'react-router';
 
 
 class Login extends Component {
@@ -37,25 +38,22 @@ class Login extends Component {
     if (!(username && password)) {
         return;
     }
-
-    let formData ={
-    }
-       console.log("formData",formData.requestType)
        
           
           const config = {
             method: 'POST',
-            url: '/api/user_daily_report/',
+            url: '/api/s7_login/',
             withCredentials: true,
-            data: formData
+            data: {
+              username: username,
+              password: password 
+            }
           }
           axios(config).then((response) => {
-            console.log(response.data)
+            if(response.data.user_status) {
+              window.location.pathname = '/'
+            }
           });
-
-
-          console.log(formData)
-
         }
           
 
@@ -66,11 +64,11 @@ class Login extends Component {
       <div>
         <Form className="form" onSubmit={this.handleSubmit}>
           <Form.Group controlId="formBasicEmail">
-            <Form.Label className="email">Email address</Form.Label>
+            <Form.Label className="email">Username</Form.Label>
             <Form.Control
               className="place"
-              type="email"
-              placeholder="Enter email"
+              type="text"
+              placeholder="Enter Username"
               name="username"
               value={username}
               onChange={this.handleChange}
