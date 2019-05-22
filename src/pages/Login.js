@@ -64,11 +64,11 @@ class Login extends Component {
       <div>
         <Form className="form" onSubmit={this.handleSubmit}>
           <Form.Group controlId="formBasicEmail">
-            <Form.Label className="email">Username</Form.Label>
+            <Form.Label className="email">Username or E-mail</Form.Label>
             <Form.Control
               className="place"
               type="text"
-              placeholder="Enter Username"
+              placeholder="Enter Username or E-mail"
               name="username"
               value={username}
               onChange={this.handleChange}
