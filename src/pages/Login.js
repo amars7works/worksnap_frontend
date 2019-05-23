@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {Form,Button} from 'react-bootstrap';
 import '../styles/Login.css';
-import axios from 'axios';
-// import { browserHistory } from 'react-router';
+import { SecureLoginUser } from '../components/Networks/Auth';
 
 
 class Login extends Component {
@@ -39,22 +38,11 @@ class Login extends Component {
         return;
     }
        
+    SecureLoginUser(username, password)
+
+    this.props.history.push('/')
           
-          const config = {
-            method: 'POST',
-            url: '/api/s7_login/',
-            withCredentials: true,
-            data: {
-              username: username,
-              password: password 
-            }
-          }
-          axios(config).then((response) => {
-            if(response.data.user_status) {
-              window.location.pathname = '/'
-            }
-          });
-        }
+  }
           
 
   render() {
