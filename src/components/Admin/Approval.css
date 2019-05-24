@@ -4,6 +4,7 @@ body{
 .employrequest{
     margin-left: 0px !important;
     margin-right: 0px !important;
+    margin-top: 25px;
 }
 
 .btn-success {
@@ -16,19 +17,30 @@ body{
     padding: 5px;
 
 }
-.btn{
+.btn {
     margin-right: 15px;
+    border-radius: 1.25rem !important;
+}
+.btn-link {
+    color: #7ab3cf !important;
+
 }
 .Approve_history{
 background-color: white;
+/* height: 350px; */
 margin-left: 10px;
-margin-top: 15px;
+margin-top: 25px;
+padding: 50px;
+border-radius: 10px;
 
 }
 .Rejected_history{
-    margin-left: 100px;
     background-color: white;
-    margin-top: 15px;
+    /* height: 350px; */
+
+    margin-top: 25px;
+    padding: 50px;
+    border-radius: 10px;
 
 
 }
@@ -56,9 +68,11 @@ h6{
     padding: 15px;
 }
 .history{
-    border-bottom: 2px #EBEBEB;
+    border-bottom: 2px solid #EBEBEB;
+position: relative;
     width: 100%;
     float:none;
+    height: auto;
     /* background-color:black; */
 }
 .btn-toolbar{
@@ -66,7 +80,75 @@ h6{
     margin-top: -50px;
 }
 .btn-primary {
-    color:none !important; 
+    color:none !important;
     background-color: none !important;
-     border-color: none !important;
+    border-color: none !important;
+
+     margin-top: 0px !important;
+
+}
+.nav-tabs .nav-link {
+    float: right;
+}
+.header h2{
+    /* float: left; */
+}
+.nav{
+ box-shadow: none !important;
+ background-color: none !important; 
+}
+.Approvehistory{
+    float: left;
+}
+.Rejectedhistory{
+    float: left;
+}
+.date{
+    font-size: 15px;
+    font-weight: bold;
+}
+.card_header{
+    background-color: none !important;
+    border-bottom: 2px solid #EBEBEB !important;
+
+}
+.card-header{
+    background-color: none !important;
+
+}
+.card-header{
+    background-color: none !important;
+
+}
+.card{
+        border-radius: 1.25rem !important;
+        margin-left: 18px;
+
+}
+
+.username{
+    color: #7ab3cf;
+    font-weight: bold;
+}
+.react-datepicker__input-container {
+        background: none !important;
+
+}
+.card:nth-child(1){
+    margin-left: 0px !important;
+
+
+}
+.leave_history_title{
+    font-weight:  bold;
+}
+.view_all{
+    width:100px;
+    height: 30px;
+    float:right;
+    margin-top: 10px;
+    background-color: #4796BE;
+    border: none;
+    color:white;
+    border-radius: 15px;
 }

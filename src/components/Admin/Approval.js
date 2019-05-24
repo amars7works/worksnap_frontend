@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import {Card,Button,Nav,ButtonToolbar,Modal} from 'react-bootstrap';
-import DatePicker from "react-datepicker";
+// import DatePicker from "react-datepicker";
+import moment from 'moment';
+
 import "react-datepicker/dist/react-datepicker.css";
 import "./Approval.css"
 
 import axios from 'axios'
 import Approve_history from './Approve_history';
-import Rejected_history from './Rejected_history';
+import Rejected_history from './Rejected_history';    
 
 
 class Approval extends Component {
@@ -42,13 +44,13 @@ componentDidMount(){
             posts: res.data
         });
 
-        // console.log(res.data)
-    });
+        console.log(res.data)
+    });                                        
     
 
 }
 
-status(status){
+status(status,id){
     const config1 = {
        
         method: 'PUT',
@@ -56,6 +58,7 @@ status(status){
         withCredentials: true,
         data:{
           leave_status : status,
+          id:id,
 
         }
         
@@ -66,18 +69,44 @@ status(status){
     console.log(config1)
 }
     
- approvedRequest(e){
+ approvedRequest(id){
+    console.log("id is",id)
+
+    let posts = this.state.posts;
+
+    for (let index = 0; index < posts.length; index++) { 
+       console.log(posts[index].id,"id:"); 
+       if(posts[index].id==id){
+           console.log("rejected id is:",id)
+           posts[index].leave_status="Approved";
+       }
+   } 
+     
     this.setState({
         
         isShow : true,
-                approved_Status:"Approved"
+       approved_Status:"Approved"
                 
             
             })
-            this.status("Approved")
+            this.status("Approved",id)
+            // this.status(posts.id)
+
         }
 
-declineRequest(e){
+declineRequest(id){
+     console.log("id is",id)
+
+     let posts = this.state.posts;
+
+     for (let index = 0; index < posts.length; index++) { 
+        console.log(posts[index].id,"id:"); 
+        if(posts[index].id==id){
+            console.log("rejected id is:",id)
+            posts[index].leave_status="Rejected";
+        }
+    } 
+     console.log("posts data is:",posts)
     this.setState({
 
       
@@ -87,10 +116,11 @@ declineRequest(e){
         
     
     })
-    this.status("Rejected")
+    this.status("Rejected",id)
+    // this.status(posts.id)
     
     }
-
+    
   
 
   render() {
@@ -99,19 +129,20 @@ declineRequest(e){
     return (
       <div>
           <div className="container">
-          <div className ="nav header">
+          <div className ="col-md-12 header">
           <h2>Approvel Request</h2>
-          <div className="col-md-5">
+          {/* <div className="col-md-12">
           </div>
-          <Nav variant="tabs" defaultActiveKey="/home">
-                <Nav.Item>
-                    <Nav.Link href=" ">Leave Request</Nav.Link>
-                </Nav.Item>
+          <Nav variant="tabs" className="col-md-12" defaultActiveKey="/home">
                 <Nav.Item>
                     <Nav.Link href="/Workfromhome">Work from home</Nav.Link>
+
+                </Nav.Item>
+                <Nav.Item>
+                <Nav.Link href=" ">Leave Request</Nav.Link>
                 </Nav.Item>
                 
-                </Nav>
+                </Nav> */}
 
           </div>
           <div className="row employrequest">
@@ -119,10 +150,15 @@ declineRequest(e){
           
 
 { this.state.posts.map(post => 
-                  <Card style={{ width: '16rem', marginLeft:'10px' }} id="#div1">
-                <Card.Header><h5>{post.username}</h5><span>Web Developer</span>
+    
+                  post.leave_status == "Pending" && <Card style={{ width: '16.5rem', }} id="#div1">
+                <Card.Header className="card_header"><h5 className="username">{post.username}
 
+                                                       
                 
+                </h5><span style={{fontWeight:'lighter'}}>Web Developer</span>
+
+                                       
                 </Card.Header>
 
                     <Card.Body>
@@ -130,9 +166,18 @@ declineRequest(e){
 
                         </Card.Title>
                         <Card.Text>
-                        <p>{post.Type_of_Request}</p>
 
-                        <p>{post.leave_start_date} </p><p> {post.leave_end_date}</p>
+                            <p className="date">
+                                
+                        {moment(post.leave_start_date).format("MMM Do YYYY") }-{moment(post.leave_end_date).format("MMM Do YYYY")}
+                                
+                        </p>
+
+                        <p>{post.Type_of_Request}</p>
+                
+                        
+                         
+                        
 
                             <p>{post.apply_reason}</p>
                        
@@ -140,21 +185,24 @@ declineRequest(e){
                         
                     </Card.Body>
                     <Card.Footer className="text-muted">
-                    <Button className="col-md-5 btn" variant="danger"  onClick={this.declineRequest}>Decline</Button>
-                        <Button className="col-md-5 btn" variant="success" onClick={this.approvedRequest} >Accept</Button>
+                    <Button className="col-md-5 btn" variant="danger"  onClick={()=>{this.declineRequest(post.id)}}>Decline</Button>
+                        <Button className="col-md-5 btn" variant="success" onClick={()=>{this.approvedRequest(post.id)}} >Accept</Button>
                     </Card.Footer>
                 </Card>
 )}
 
 
-       
+            </div>
+  
        </div>
-       </div>
-       <div className="col-md-12">
+       <div className="col-md-6 Approvehistory">
        <Approve_history/>
+       </div>
+       <div className="col-md-6 Rejectedhistory">
+
        <Rejected_history/>
        </div>
-       
+
 
        </div>
 
@@ -162,5 +210,5 @@ declineRequest(e){
     )
   }
 }
-
+                              
 export default Approval

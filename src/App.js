@@ -21,7 +21,7 @@ class App extends React.Component {
       <Router>
         <Switch>
           {/* Employee routes */}
-          <EmployeeAuthRoute exact path='/frd/requests/' component={Total} />
+          {/* <EmployeeAuthRoute exact path='/frd/requests/' component={Total} /> */}
           <EmployeeAuthRoute exact path='/frd/dailyreport/' component={Dailyreport} />
 
           {/* Employer routes */}
