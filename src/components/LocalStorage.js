@@ -19,7 +19,6 @@ export const getLocalAuthState = () => {
         is_superuser: false
     }
     try {
-
         const stringifiedData = localStorage.getItem('s7_auth_state')
         return(stringifiedData === null ? defaultAuth : JSON.parse(stringifiedData))
 

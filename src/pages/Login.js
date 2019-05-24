@@ -37,10 +37,9 @@ class Login extends Component {
     if (!(username && password)) {
         return;
     }
-       
-    SecureLoginUser(username, password)
-
-    this.props.history.push('/')
+    
+    // signs users in.
+    SecureLoginUser(username, password, this.props)
           
   }
           

@@ -20,20 +20,24 @@ class App extends React.Component {
 
       <Router>
         <Switch>
+
           {/* Employee routes */}
-          {/* <EmployeeAuthRoute exact path='/frd/requests/' component={Total} /> */}
+          <EmployeeAuthRoute exact path='/frd/requests/' component={Total} />
           <EmployeeAuthRoute exact path='/frd/dailyreport/' component={Dailyreport} />
 
           {/* Employer routes */}
-          <EmployerAuthRoute exact path='/frd/requests/' component={Total} />
           <EmployerAuthRoute exact path='/frd/emp/report/' component={EmployeeReport}  />
           <EmployerAuthRoute exact path='/frd/employee/' component={Employees} />
           <EmployerAuthRoute exact path='/frd/employees/' component={Employee} />
           <EmployerAuthRoute exact path='/frd/approve/' component={Approval} />
 
-          {/* Public routes */}
-          <PublicRoute exact path='/frd/sign_in' component={Login} />
-          <Route exact path='/' render={() => (<Redirect to={{ pathname: "/frd/sign_in/" }} />)} />
+          {/* Public routes: employeeRoute is the employee initial routing path */}
+          <PublicRoute exact 
+                       path='/' 
+                       component={Login}
+                       employeeRoute="/frd/requests/"
+                       employerRoute="/frd/approve/" />
+
         </Switch>
       </Router>
         

@@ -2,13 +2,14 @@ import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 
 import { IsUserLoggedIn } from './Networks/Auth'
+import { getLocalAuthState } from './LocalStorage'
 
 export const EmployerAuthRoute = ({ component: Component, ...args }) => (
     // Employer Authenticated Route
     <Route  {...args} 
             render={(props) => {
-
-                const { user_status, is_superuser } = IsUserLoggedIn()
+                IsUserLoggedIn()
+                const { user_status, is_superuser } = getLocalAuthState()
                 return( user_status && is_superuser ? (
                     <Component {...props} />
                 ) : (
@@ -22,7 +23,8 @@ export const EmployeeAuthRoute = ({component: Component, ...args }) => (
     <Route {...args}
            render={
                (props) => {
-                    const { user_status, is_superuser } = IsUserLoggedIn()
+                    IsUserLoggedIn()
+                    const { user_status, is_superuser } = getLocalAuthState()
                     return(
                         user_status && !is_superuser ? (
                             <Component {...props} />
@@ -35,25 +37,31 @@ export const EmployeeAuthRoute = ({component: Component, ...args }) => (
     />
 )
 
-export const PublicRoute = ({component: Component, ...args }) => (
+export const PublicRoute = ({component: Component, ...args }) => {
+const { employeeRoute, employerRoute } = args
+return(
     <Route  {...args}
             render={
                 (props) => {
-                    const { user_status, is_superuser } = IsUserLoggedIn()
-                    let path
+                    IsUserLoggedIn()
+                    const { user_status, is_superuser } = getLocalAuthState()
                     if(user_status) {
-                        path= is_superuser ? '/frd/approve/' : '/frd/requests/'
-                    }                    
+                        console.log('Im here')
+                        return(<Redirect to={{
+                            pathname: is_superuser ? employerRoute : employeeRoute
+                        }} />)
+                    }
+                    // added Initial routes to the props
+                    props = {
+                             ...props, 
+                             employerInitialRoute: employerRoute, 
+                             employeeInitialRoute: employeeRoute
+                            }
+                    
                     return(
-                        !user_status && !is_superuser ? (
-                            <Component {...props} />
-                        ) : (
-                            <Redirect to={{
-                                pathname: path
-                            }} />
-                        )
+                        <Component {...props} />                
                     )
                 }
             }
     />
-)
+)}

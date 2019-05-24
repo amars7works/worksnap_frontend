@@ -81,8 +81,7 @@ class Dailyreport extends Component {
         
                       
                }
-      
-               console.log("formData",formData.requestType)
+    
                
                   
                   const config = {

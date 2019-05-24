@@ -1,12 +1,37 @@
 import axios from 'axios';
-import { createLocalAuthState, getLocalAuthState } from '../LocalStorage';
+import { createLocalAuthState, destroyLocalAuthState } from '../LocalStorage';
 
 export const IsUserLoggedIn = () => {
     // checks whether the user is loggedIn or not
-    return getLocalAuthState()
+    const config = {
+        method: 'GET',
+        url: '/api/user/auth_status/',
+        withCredentials: true
+    }
+
+    axios(config).then((response) => {
+        if(response.data.user_status) {
+            createLocalAuthState(response.data)
+        } else {
+            destroyLocalAuthState()
+        }
+    }).catch((err) => {
+        destroyLocalAuthState()
+        console.log("[Notice] you've been logged out")
+    })
 }
 
-export const SecureLoginUser = async (username, password) => {
+export const AuthRedirectHandler = (data, props) => {
+
+    // helps in authentication redirection after logging in
+    if(data.user_status && !data.is_superuser) {
+        props.history.push(props.employeeInitialRoute)
+    } else if(data.user_status && data.is_superuser) {
+        props.history.push(props.employerInitialRoute)
+    }
+}
+
+export const SecureLoginUser = (username, password, props=undefined) => {
     // Logs user in
     const config = {
         method: 'POST',
@@ -17,16 +42,26 @@ export const SecureLoginUser = async (username, password) => {
             password: password 
         }
     }
-    return await axios(config).then((res) => {
+    axios(config).then((res) => {
         // Save data to localstorage.
         createLocalAuthState(res.data)
+        AuthRedirectHandler(res.data, props)
     }).catch((err) => {
-        console.log('[Error] unsuccessful login attempt')
+        console.log('[Error] unsuccessful login attempt', err)
     })
 }
 
-export const SecureLogoutUser = async () => {
-
+export const SecureLogoutUser = (successCallback=undefined, failedCallback=undefined) => {
+    // Logout for user
+    const config = {
+        method: 'GET',
+        url: '/api/user/logout/',
+        withCredentials: true
+    }
+    axios(config).then((response) => {
+        successCallback()
+    }).catch(err => {
+        failedCallback()
+    })
 }
-
 
