@@ -27,7 +27,7 @@ class Dailyreport extends Component {
   
         this.state = {
            
-            startDate:new Date(),
+            startDate: new Date(),
             what_was_done_this_day:"",
             what_is_your_plan_for_the_next_day:"",
             what_are_your_blockers:"",
@@ -72,15 +72,13 @@ class Dailyreport extends Component {
                
               
             let formData ={
-               
+              created_at: this.state.startDate,
               what_was_done_this_day:this.state.what_was_done_this_day,
               what_is_your_plan_for_the_next_day:this.state.what_is_your_plan_for_the_next_day,
               what_are_your_blockers:this.state.what_are_your_blockers,
               do_you_have_enough_tasks_for_next_three_days:this.state.do_you_have_enough_tasks_for_next_three_days,
               if_you_get_stuck_are_you_still_able_to_work_on_something_else:this.state.if_you_get_stuck_are_you_still_able_to_work_on_something_else,
-      
-      
-                      
+        
                       
                }
       
@@ -89,7 +87,7 @@ class Dailyreport extends Component {
                   
                   const config = {
                     method: 'POST',
-                    url: '/api/user_daily_report/',
+                    url: '/api/daily_report/',
                     withCredentials: true,
                     data: formData
                   }
