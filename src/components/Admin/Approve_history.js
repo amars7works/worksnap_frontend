@@ -1,19 +1,41 @@
 import React, { Component } from 'react'
 import {Button,ButtonToolbar,Modal} from 'react-bootstrap';
+import moment from 'moment';
+import "./Approval.css"
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+
 import axios from 'axios'
+
+
+const MAX_ITEMS = 4;
 
 export class Approve_history extends Component {
     constructor(props) {
         super(props);
         this.state ={
             posts:[],
-            
+            isOpen:false,
+            startDate: new Date(),
+
             smShow: false,
              
         }
+        
+        
     }
+    toggle = () => {
+        this.setState({ isOpen: !this.state.isOpen });
+      }
+      
+      getRenderedItems() {
+        if (this.state.isOpen) {
+          return this.state.posts;
+        }
+        return this.state.posts.slice(0, MAX_ITEMS);
+      }
+
     componentDidMount(){
         const config = {
             url: "/api/leave_approved_list/",
@@ -38,11 +60,12 @@ export class Approve_history extends Component {
 
     return (
       <div>
-        <div className="col-md-5 Approve_history" >
+          <div className="container">
+        <div className="col-md-12 Approve_history" >
        <div className="history_header">
        <div className="row">
-       <div className="header_name">
-       <h4>Approved History</h4>
+       <div className="header_name col-md-8 col-xs-6">
+       <h5 className="leave_history_title">Leave Approved History</h5>
        </div>
        <div className="datepick">
        <DatePicker 
@@ -56,22 +79,21 @@ export class Approve_history extends Component {
                         selectsStart
                         startDate={this.state.startDate}
                         onChange={this.handleChangeStart}
-                    // dateFormat="MM/DD/YYYY"
                     />
        </div>
        </div>
        </div>
 
-       { this.state.posts.map(post => 
+       <div>
 
+       { this.getRenderedItems().map(post => 
+               
     <div className="history">
-    <h6>{post.username}</h6>
+    <h6 className="username" >{post.username}</h6>
     <ButtonToolbar>
-        <Button onClick={() => this.setState({ smShow: true })}>
+        <Button variant="link" onClick={() => this.setState({ smShow: true })}>
         View details
         </Button>
-    
-
         <Modal
         size="sm"
         show={this.state.smShow}
@@ -86,16 +108,24 @@ export class Approve_history extends Component {
         <Modal.Body>
         <p>{post.Type_of_Request}</p>
 
-<p>{post.leave_start_date} </p><p> {post.leave_end_date}</p>
+        {moment(post.leave_start_date).format("MMM Do YYYY") }-{moment(post.leave_end_date).format("MMM Do YYYY")}
+            <p>{post.apply_reason}</p>
+            <p>{post.leave_status}</p>
 
-<p>{post.apply_reason}</p>
+
         </Modal.Body>
         </Modal>
     
     </ButtonToolbar>
+    
 </div>
 )}
+ <button className="view_all"  onClick={this.toggle}>
+          {this.state.isOpen ? 'close' : 'View All'}
+        </button>
+        </div>
        </div>
+      </div>
       </div>
     )
   }
