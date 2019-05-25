@@ -51,7 +51,7 @@ export const SecureLoginUser = (username, password, props=undefined) => {
     })
 }
 
-export const SecureLogoutUser = (successCallback=undefined, failedCallback=undefined) => {
+export const SecureLogoutUser = () => {
     // Logout for user
     const config = {
         method: 'GET',
@@ -59,9 +59,10 @@ export const SecureLogoutUser = (successCallback=undefined, failedCallback=undef
         withCredentials: true
     }
     axios(config).then((response) => {
-        successCallback()
+        window.location.pathname = '/'
     }).catch(err => {
-        failedCallback()
+        window.location.pathname = '/'
+        console.log('[Error] Logging out user')
     })
 }
 

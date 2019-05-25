@@ -117,7 +117,7 @@ export class Works extends Component {
   render() {
     return (
       <div>
-        <Button className="col-md-11" style={{backgroundColor:'#F58663', borderColor:'#F58663', height:'70px',textAlignLast:"Left",padding:'25px',borderRadius:'15px',fontSize:'20px'}} onClick={this.handleShow}>
+        <Button className="col-md-11" style={{backgroundColor:'#F58663', borderColor:'#F58663', height:'70px',textAlignLast:"Left",padding:'25px',borderRadius:'15px',fontSize:'20px',marginBottom:'15px'}} onClick={this.handleShow}>
         Work From Home Request
         </Button>
 

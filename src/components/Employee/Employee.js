@@ -65,8 +65,12 @@ export class Profile_photo extends Component {
         }
         )
       }
-    return (   
+
+      const { CustomNavigation } = this.props
+    return (
       <div>
+
+        <CustomNavigation />
         <div className = "Navbar">
           <nav class="navbar navbar-expand-lg navbar-light" >
             <div class="collapse navbar-collapse" id="navbarNav">
