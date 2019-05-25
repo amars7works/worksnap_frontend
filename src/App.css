@@ -4,6 +4,7 @@ body{
 }
 .leave-request{
   background-color: white;
+  height: 300px;
   margin: auto;
   border-radius: 10px;
   padding: 25px;

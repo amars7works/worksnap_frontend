@@ -130,7 +130,7 @@ export class Leave extends Component {
 
     return (
       <div>
-        <Button variant="primary" className="col-md-11" style={{backgroundColor:'#FF6565', borderColor:'#FF6565', height:'70px',textAlignLast:"right",padding:'25px',borderRadius:'15px',fontSize:'20px'}} onClick={this.handleShow}>
+        <Button variant="primary" className="col-md-11" style={{backgroundColor:'#FF6565', borderColor:'#FF6565', height:'70px',textAlignLast:"right",padding:'25px',borderRadius:'15px',fontSize:'20px', marginBottom:'15px'}} onClick={this.handleShow}>
         Leave Request
         </Button>
 

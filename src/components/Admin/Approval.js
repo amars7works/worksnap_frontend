@@ -124,10 +124,10 @@ declineRequest(id){
   
 
   render() {
-
-
+    const { CustomNavigation } = this.props
     return (
       <div>
+        <CustomNavigation />
           <div className="container">
           <div className ="col-md-12 header">
           <h2>Approvel Request</h2>

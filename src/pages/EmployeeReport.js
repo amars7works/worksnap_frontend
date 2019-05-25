@@ -7,9 +7,10 @@ import SideNav from '../components/SideNav';
 class EmployeeReport extends React.Component {
 
   render() {
+    // const { CustomNavigation } = this.props
     return (
 
-    <div className ="app">
+    <div className ="app"> 
 
       <TopNav />
       <div className ="down-div">
