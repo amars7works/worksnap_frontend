@@ -59,8 +59,10 @@ export const SecureLogoutUser = () => {
         withCredentials: true
     }
     axios(config).then((response) => {
+        destroyLocalAuthState()
         window.location.pathname = '/'
     }).catch(err => {
+        destroyLocalAuthState()
         window.location.pathname = '/'
         console.log('[Error] Logging out user')
     })
