@@ -10,6 +10,7 @@ import Dailyreport from './components/Dailyreport/Dailyreport'
 import Employees from './components/Employees_List/Employess_list'
 //import NotFound from './pages/Page404'
 import { EmployerAuthRoute, EmployeeAuthRoute, PublicRoute } from "./components/SimplifiedAuthRoute"; 
+import employees from './components/Employees_List/Employees';
 
 
 class App extends React.Component {
@@ -21,13 +22,14 @@ class App extends React.Component {
       <Router>
         <Switch>
           {/* Employee routes */}
-          <EmployeeAuthRoute exact path='/frd/requests/' component={Total} />
-          <EmployeeAuthRoute exact path='/frd/dailyreport/' component={Dailyreport} />
+          
 
           {/* Employer routes */}
+          <EmployerAuthRoute exact path='/frd/dailyreport/' component={Dailyreport} />
+          <EmployerAuthRoute exact path='/frd/requests/' component={Total} />
           <EmployerAuthRoute exact path='/frd/emp/report/' component={EmployeeReport}  />
-          <EmployerAuthRoute exact path='/frd/employee/' component={Employees} />
-          <EmployerAuthRoute exact path='/frd/employees/' component={Employee} />
+          <EmployerAuthRoute exact path='/frd/employee/' component={Employee} />
+          <EmployerAuthRoute exact path='/frd/employees/' component={Employees} />
           <EmployerAuthRoute exact path='/frd/approve/' component={Approval} />
 
           {/* Public routes: employeeRoute is the employee initial routing path */}

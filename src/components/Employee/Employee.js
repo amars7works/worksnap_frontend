@@ -75,12 +75,11 @@ export class Profile_photo extends Component {
           <nav class="navbar navbar-expand-lg navbar-light" >
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
-
-                <li class="nav-item">
+                <li class="nav-item col-sm-6" >
                   <a class="navbar-brand" href="#">Total Employees</a>
                           </li>
-                <li class="nav-item">
-                <input type ="date" id ="topcard-from-date" className="input_date" />
+                <li class="nav-item col-sm-6">
+                <input type="date"  id ="topcard-from-date" className="input_date" />
                 </li>
                
                 <li>
@@ -90,9 +89,10 @@ export class Profile_photo extends Component {
                 <a  href="#" >Off day</a>
                 </li>
                 <li >
-                <a  href="#" >work for home</a>
+                <a  href="#" >work from home</a>
                 </li>
               </ul>
+
             </div>
           </nav>
         </div>

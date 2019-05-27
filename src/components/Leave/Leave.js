@@ -164,7 +164,7 @@ export class Leave extends Component {
                  <div className="form-group row mt-2">
                     <div className="col-md-6">
                     
-                    <span>from:</span>
+                    <span  className="From">from:</span>
                     
                     <DatePicker 
                        className="form-control" 
@@ -182,7 +182,7 @@ export class Leave extends Component {
                     />
                     </div>
                     <div className="col-md-6">
-                    <span className>To: </span>
+                    <span className="From">To: </span>
                     <DatePicker    
                         className="form-control"                           
                         ref="range"
@@ -218,7 +218,7 @@ export class Leave extends Component {
         </div>
           </Modal.Body>
           <ModalFooter>
-            <Button variant="secondary" style={{borderRadius:'20px'}} onClick={this.handleClose}>
+            <Button variant="secondary changes" style={{borderRadius:'20px'}} onClick={this.handleClose}>
               Close
             </Button>
             <button type="submit" className="btn btn-success form-control col-sm-2" style={{borderRadius:'20px'}} >Submit</button>

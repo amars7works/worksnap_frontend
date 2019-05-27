@@ -152,3 +152,29 @@ position: relative;
     color:white;
     border-radius: 15px;
 }
+@media (max-width:400px) and (min-width:360px)
+{
+    .Approve_history{
+        background-color: white;
+        /* height: 350px; */
+        margin-left: 10px;
+        margin-top: 25px;
+        padding: 50px;
+        border-radius: 10px;
+        margin-left: 29px;
+        
+        }
+        .Rejected_history{
+            background-color: white;
+            /* height: 350px; */
+            margin-left: 29px;
+            margin-top: 25px;
+            padding: 50px;
+            border-radius: 10px;
+               
+        }
+        .header{
+            margin-left: 40px;
+        }
+
+}

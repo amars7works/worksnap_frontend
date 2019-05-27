@@ -27,3 +27,20 @@ label{
     background-color:none !important; 
     border-bottom:none !important;
 }
+.Dailyreport{
+    margin: auto;
+
+}
+
+@media (max-width:420px) and (min-width:320px)
+{
+    .card-body{
+        margin-left: 20px !important;
+    }
+}
+@media (max-width:900px) and (min-width:768px)
+{
+    .card-body{
+        margin-left: 20px !important;
+    }
+}

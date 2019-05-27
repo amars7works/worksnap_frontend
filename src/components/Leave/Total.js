@@ -18,7 +18,7 @@ class Total extends Component {
     return (
       <div>
       <CustomNavigation />
-        <div className ="col-md-4 leave-request" style={{borderRadius:'2px solid black'}}>
+        <div className ="col-md-4 leave-request" style={{borderRadius:'2px solid black',width:"68vw"}}>
     <Leave/>
     <br/>
     <br/>
@@ -36,7 +36,7 @@ class Total extends Component {
     </div>
 
     <br/>
-    <div className = "col-md-4 sent-status">
+    <div className = "col-md-4 sent-status" style={{width:"68%"}}>
     <Requestsent/>
     
 
