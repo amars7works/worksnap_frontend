@@ -14,10 +14,10 @@ class Total extends Component {
  
 
   render() {
-    const { CustomNavigation } = this.props
+    const { EmployeeNavigation } = this.props
     return (
       <div>
-      <CustomNavigation />
+      <EmployeeNavigation />
         <div className ="col-md-4 leave-request" style={{borderRadius:'2px solid black'}}>
     <Leave/>
     <br/>

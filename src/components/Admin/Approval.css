@@ -123,6 +123,7 @@ position: relative;
 .card{
         border-radius: 1.25rem !important;
         margin-left: 18px;
+        margin-top: 15px;
 
 }
 
@@ -151,4 +152,7 @@ position: relative;
     border: none;
     color:white;
     border-radius: 15px;
+}
+.modal-content {
+    margin-top: 100px;
 }

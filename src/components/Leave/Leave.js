@@ -24,7 +24,7 @@ export class Leave extends Component {
         this.handleChangeEnd = this.handleChangeEnd.bind(this)
         this.handleChange = this.handleChange.bind(this)
         // this.leaveRequestStatus =this.leaveRequestStatus.bind(this)
-    
+                   
         this.state = {
           show: false,
           selected_option:"",

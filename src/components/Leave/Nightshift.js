@@ -200,7 +200,7 @@ export class Nightshift extends Component {
             <Button variant="secondary" style={{borderRadius:'20px'}} onClick={this.handleClose}>
               Close
             </Button>
-            <button type="submit" className="btn btn-success form-control col-sm-2" onClick={(e) => this.props.Clicked("pending")} style={{borderRadius:'20px'}} >Submit</button>
+            <button type="submit" className="btn btn-success form-control col-sm-2" style={{borderRadius:'20px'}} >Submit</button>
           </ModalFooter>
             </form>
 
