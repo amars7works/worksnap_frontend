@@ -8,7 +8,8 @@ export class SideNav extends Component {
     return (
            <div className="Verical">
             <Nav>
-             <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
+             {/* <Nav.Link href="/Dashboard">Dashboard</Nav.Link>  */}
+             <Nav.Link href="/frd/dailyreport/">Dailyreport</Nav.Link>
              <Nav.Link href="/Employee">Employee</Nav.Link>
              <Nav.Link href="/frd/emp/report">Worksnap Report</Nav.Link>
              <Nav.Link href="/frd/approve"> Approval</Nav.Link>

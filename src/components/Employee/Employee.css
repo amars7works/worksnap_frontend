@@ -5,7 +5,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
     background-color: #4797bd;
-    margin-left: 20px;
+    margin-left: 7vw;
     float: left;
     margin-bottom: 20px;
    
@@ -32,4 +32,143 @@
   font-size: 12px;
   text-align: center;
   color:whitesmoke;
+}
+
+@media (max-width:400px) and (min-width:360px)
+{
+  .Photo
+{
+    width: 203px;
+    height: 200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    background-color: #4797bd;
+    margin-left: 19vw;
+    float: left;
+    margin-bottom: 20px;
+   
+} 
+ .image
+{
+    width: 84px;
+    height: 84px;
+    border-radius:50%;
+    margin:20px auto;
+    display: block;
+}
+.name
+{
+  font-size: 14px;
+  text-align: center;
+  color:white;
+  margin-bottom: 0;
+  margin-top:10px;
+  text-decoration: none;
+}
+.designation
+{
+  font-size: 12px;
+  text-align: center;
+  color:whitesmoke;
+}
+a.navbar-brand {
+  font-size: 12px;
+  padding: 0px;
+
+  margin-left: 13vw;
+}
+
+}
+
+
+@media (max-width:500px) and (min-width:414px)
+{
+  .Photo
+{
+    width: 203px;
+    height: 200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    background-color: #4797bd;
+    margin-left: 19vw;
+    float: left;
+    margin-bottom: 20px;
+   
+} 
+ .image
+{
+    width: 84px;
+    height: 84px;
+    border-radius:50%;
+    margin:20px auto;
+    display: block;
+}
+.name
+{
+  font-size: 14px;
+  text-align: center;
+  color:white;
+  margin-bottom: 0;
+  margin-top:10px;
+  text-decoration: none;
+}
+.designation
+{
+  font-size: 12px;
+  text-align: center;
+  color:whitesmoke;
+}
+a.navbar-brand {
+  font-size: 12px;
+  padding: 0px;
+
+  margin-left: 13vw;
+}
+
+}
+
+@media (max-width:800px) and (min-width:768px)
+{
+  .Photo
+{
+    width: 203px;
+    height: 200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    background-color: #4797bd;
+    margin-left:11vw;
+    float: left;
+    margin-bottom: 20px;
+   
+} 
+ .image
+{
+    width: 84px;
+    height: 84px;
+    border-radius:50%;
+    margin:20px auto;
+    display: block;
+}
+.name
+{
+  font-size: 14px;
+  text-align: center;
+  color:white;
+  margin-bottom: 0;
+  margin-top:10px;
+  text-decoration: none;
+}
+.designation
+{
+  font-size: 12px;
+  text-align: center;
+  color:whitesmoke;
+}
+a.navbar-brand {
+  font-size: 12px;
+  padding: 0px;
+
+  margin-left: 13vw;
+}
+
 }

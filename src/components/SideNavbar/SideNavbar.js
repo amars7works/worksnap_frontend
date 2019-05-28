@@ -164,8 +164,12 @@ function CustomNavigation() {
             Dashboard
             </MenuItem>
 
+            <MenuItem component={Link} to = "/frd/employees/">
+            Total Emloyees           
+            </MenuItem>
+
             <MenuItem component={Link} to = "/frd/dailyreport/">
-            Daily Report
+          Daily Report            
             </MenuItem>
 
             <MenuItem component={Link} to = "/frd/requests/">
