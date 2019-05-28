@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 import {Card,Button,Nav,ButtonToolbar,Modal} from 'react-bootstrap';
 // import DatePicker from "react-datepicker";
+import { makeStyles } from '@material-ui/core/styles';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
+import IconButton from '@material-ui/core/IconButton';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
+import tileData from './tileData';
 import moment from 'moment';
-import HorizontalScroll from 'react-scroll-horizontal'
-
 import "react-datepicker/dist/react-datepicker.css";
 import "./Approval.css"
-
 import axios from 'axios'
 import Approve_history from './Approve_history';
 import Rejected_history from './Rejected_history';    
@@ -147,54 +151,49 @@ declineRequest(id){
 
           </div>
 
-          <div className="row employrequest">
-
-
-
+          <GridList className={classes.gridList} cols={2.5}>
 { this.state.posts.map(post => 
     
-                  post.leave_status == "Pending" && <Card style={{ width: '16.5rem', }} id="#div1">
-                <Card.Header className="card_header"><h5 className="username">{post.username}
+    post.leave_status == "Pending" && <Card style={{ width: '16.5rem', }} id="#div1">
+  <Card.Header className="card_header"><h5 className="username">{post.username}
 
-                                                       
-                
-                </h5><span style={{fontWeight:'lighter'}}>Web Developer</span>
+                                         
+  
+  </h5><span style={{fontWeight:'lighter'}}>Web Developer</span>
 
-                                       
-                </Card.Header>
-
-                    <Card.Body>
-                        <Card.Title>
-
-                        </Card.Title>
-                        <Card.Text>
-
-                            <p className="date">
-                                
-                        {moment(post.leave_start_date).format("MMM Do YYYY") }-{moment(post.leave_end_date).format("MMM Do YYYY")}
-                                
-                        </p>
-
-                        <p>{post.Type_of_Request}</p>
-                
-                        
                          
-                        
+  </Card.Header>
 
-                            <p>{post.apply_reason}</p>
-                       
-                        </Card.Text>
-                        
-                    </Card.Body>
-                    <Card.Footer className="text-muted">
-                    <Button className="col-md-5 btn" variant="danger"  onClick={()=>{this.declineRequest(post.id)}}>Decline</Button>
-                        <Button className="col-md-5 btn" variant="success" onClick={()=>{this.approvedRequest(post.id)}} >Accept</Button>
-                    </Card.Footer>
-                </Card>
+      <Card.Body>
+          <Card.Title>
+
+          </Card.Title>
+          <Card.Text>
+
+              <p className="date">
+                  
+          {moment(post.leave_start_date).format("MMM Do YYYY") }-{moment(post.leave_end_date).format("MMM Do YYYY")}
+                  
+          </p>
+
+          <p>{post.Type_of_Request}</p>
+  
+          
+           
+          
+
+              <p>{post.apply_reason}</p>
+         
+          </Card.Text>
+          
+      </Card.Body>
+      <Card.Footer className="text-muted">
+      <Button className="col-md-5 btn" variant="danger"  onClick={()=>{this.declineRequest(post.id)}}>Decline</Button>
+          <Button className="col-md-5 btn" variant="success" onClick={()=>{this.approvedRequest(post.id)}} >Accept</Button>
+      </Card.Footer>
+  </Card>
 )}
-
-
-            </div>
+      </GridList>
 
        </div>
        <div className="col-md-6 Approvehistory">
@@ -213,4 +212,4 @@ declineRequest(id){
   }
 }
                               
-export default Approval
+export default Approval1

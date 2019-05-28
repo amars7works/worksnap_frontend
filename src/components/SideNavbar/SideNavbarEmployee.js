@@ -89,7 +89,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function CustomNavigation() {
+function EmployeeNavigation() {
 
   const classes = useStyles();
   const theme = useTheme();
@@ -156,17 +156,23 @@ function CustomNavigation() {
         <Divider />
 
 
-<EmployerAuthRoute >
-         <List >
+
+
+
+
+
+
+         <List>
           {[ 
           
           <MenuItem component={Link} to = "/">
             Dashboard
             </MenuItem>,
-          <MenuItem component={Link} to = "/frd/employees/">
-            Employees           
-            </MenuItem>,
-            <MenuItem component={Link} to = "/">
+          <MenuItem component={Link} to = "/frd/dailyreport/">
+          Daily Report            
+          </MenuItem>,
+
+            <MenuItem component={Link} to = "/frd/requests/">
             Leave Request
             </MenuItem>,
 
@@ -181,12 +187,6 @@ function CustomNavigation() {
             </ListItem>
           ))} 
          </List> 
-</EmployerAuthRoute>
-
-
-
-
-       
 
 
 
@@ -198,11 +198,7 @@ function CustomNavigation() {
             </MenuItem>
 
             <MenuItem component={Link} to = "/frd/employees/">
-            Total Emloyees           
-            </MenuItem>
-
-            <MenuItem component={Link} to = "/frd/dailyreport/">
-          Daily Report            
+            Employees           
             </MenuItem>
 
             <MenuItem component={Link} to = "/frd/requests/">
@@ -238,4 +234,4 @@ function CustomNavigation() {
   );
 }
 
-export default CustomNavigation;
+export default EmployeeNavigation;
