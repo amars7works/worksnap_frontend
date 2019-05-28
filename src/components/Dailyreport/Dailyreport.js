@@ -140,11 +140,11 @@ class Dailyreport extends Component {
         }
             
   render() {
-    const { CustomNavigation } = this.props
+    const { EmployeeNavigation } = this.props
     return (
       <div>
 
-        <CustomNavigation />
+        <EmployeeNavigation />
 
         <div className="container">
         <div className="col-md-9 col-sm-12 Dailyreport">

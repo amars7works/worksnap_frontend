@@ -4,6 +4,8 @@ import { Route, Redirect } from 'react-router-dom'
 import { IsUserLoggedIn } from './Networks/Auth'
 import { getLocalAuthState } from './LocalStorage'
 import CustomNavigation from './SideNavbar/SideNavbar';
+import EmployeeNavigation from './SideNavbar/SideNavbarEmployee';
+
 
 export const EmployerAuthRoute = ({ component: Component, ...args }) => (
     // Employer Authenticated Route
@@ -24,7 +26,7 @@ export const EmployerAuthRoute = ({ component: Component, ...args }) => (
     } />
 )
 
-export const EmployeeAuthRoute = ({component: Component, ...args }) => (
+export const EmployeeAuthRoute = ({component: Component, ...args }) => (   
     <Route {...args}
            render={
                (props) => {
@@ -32,7 +34,7 @@ export const EmployeeAuthRoute = ({component: Component, ...args }) => (
                     const { user_status, is_superuser } = getLocalAuthState()
                     props = {
                             ...props, 
-                            CustomNavigation: CustomNavigation
+                            EmployeeNavigation: EmployeeNavigation
                             }
                     return(
                         user_status && !is_superuser ? (
