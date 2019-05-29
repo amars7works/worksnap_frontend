@@ -16,6 +16,7 @@ import "./Approval.css";
 import axios from "axios";
 import Approve_history from "./Approve_history";
 import Rejected_history from "./Rejected_history";
+import numeral from "numeral";
 
 class Approval extends Component {
   constructor(props) {
@@ -155,9 +156,10 @@ class Approval extends Component {
 
                         <p>{post.apply_reason}</p>
                         <p>
-                          Remaining Leaves{" "}
+                          Remaining Leaves
                           <Badge variant="secondary">
-                            {post.remainingleaves}
+                            {/* {post.remainingleaves} */}
+                            {numeral(post.remainingleaves).format('0,0')}
                           </Badge>
                         </p>
                         {/* <h6>
