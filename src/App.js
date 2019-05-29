@@ -6,8 +6,9 @@ import Approval from './components/Admin/Approval';
 import Login from './pages/Login';
 import EmployeeReport from './pages/EmployeeReport';
 import Employee from './components/Employee/Employee';
-import Dailyreport from './components/Dailyreport/Dailyreport'
-import Employees from './components/Employees_List/Employess_list'
+import Dailyreport from './components/Dailyreport/Dailyreport';
+import Employees from './components/Employees_List/Employess_list';
+import DailyreportAdmin from './components/DailyreportAdmin/DailyreportAdmin';
 //import NotFound from './pages/Page404'
 import { EmployerAuthRoute, EmployeeAuthRoute, PublicRoute } from "./components/SimplifiedAuthRoute"; 
 
@@ -29,6 +30,8 @@ class App extends React.Component {
           <EmployerAuthRoute exact path='/frd/employee/' component={Employees} />
           <EmployerAuthRoute exact path='/frd/employees/' component={Employee} />
           <EmployerAuthRoute exact path='/frd/approve/' component={Approval} />
+          <EmployerAuthRoute exact path='/frd/daily_report/' component={DailyreportAdmin} />
+
 
           {/* Public routes: employeeRoute is the employee initial routing path */}
           <PublicRoute exact 
