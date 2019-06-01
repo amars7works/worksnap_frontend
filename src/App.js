@@ -6,9 +6,16 @@ import Approval from './components/Admin/Approval';
 import Login from './pages/Login';
 import EmployeeReport from './pages/EmployeeReport';
 import Employee from './components/Employee/Employee';
+<<<<<<< HEAD
+import Dailyreport from './components/Dailyreport/Dailyreport'
+import Employees from './components/Employees_List/Employess_list'
+import FullWidthTabs from './components/Employeee/Employeee'
+import EmployeeList from './components/EmployeeListTable/EmployeeList';
+=======
 import Dailyreport from './components/Dailyreport/Dailyreport';
 import Employees from './components/Employees_List/Employess_list';
 import DailyreportAdmin from './components/DailyreportAdmin/DailyreportAdmin';
+>>>>>>> 132f0358e01d96b7e1c7279aaa3eb62010de577a
 //import NotFound from './pages/Page404'
 import { EmployerAuthRoute, EmployeeAuthRoute, PublicRoute } from "./components/SimplifiedAuthRoute"; 
 
@@ -28,11 +35,15 @@ class App extends React.Component {
           {/* Employer routes */}
           <EmployerAuthRoute exact path='/frd/emp/report/' component={EmployeeReport}  />
           <EmployerAuthRoute exact path='/frd/employee/' component={Employees} />
-          <EmployerAuthRoute exact path='/frd/employees/' component={Employee} />
+          <EmployerAuthRoute exact path='/frd/employees/' component={FullWidthTabs} />
           <EmployerAuthRoute exact path='/frd/approve/' component={Approval} />
+<<<<<<< HEAD
+          <EmployerAuthRoute exact path='/frd/EmployeeList/' component={EmployeeList} />
+=======
           <EmployerAuthRoute exact path='/frd/daily_report/' component={DailyreportAdmin} />
           <EmployerAuthRoute exact path='/frd/worksnap_report/' component={DailyreportAdmin} />
 
+>>>>>>> 132f0358e01d96b7e1c7279aaa3eb62010de577a
 
           {/* Public routes: employeeRoute is the employee initial routing path */}
           <PublicRoute exact 

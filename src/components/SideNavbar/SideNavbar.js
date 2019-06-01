@@ -235,6 +235,9 @@ function CustomNavigation() {
             <MenuItem component={Link} to = "/frd/requests/">
             Leave Request
             </MenuItem>
+            <MenuItem component={Link} to = "/frd/EmployeeList/">
+            Employee List Table 
+            </MenuItem>
 
             <MenuItem component={Link} to = "/" onClick={() => {SecureLogoutUser()}}>
             Logout

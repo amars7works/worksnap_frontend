@@ -41,7 +41,7 @@ componentDidMount(){
       
       <div>
            <div className="container">
-      <div className="row">
+      <div className="row container1">
 
   { this.state.posts.map(post => 
       <Card className="employCard" style={{ width: '14rem' }}>

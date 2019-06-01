@@ -21,8 +21,12 @@
     "react-scripts": "3.0.0",
     "react-scroll-horizontal": "^1.6.2",
     "react-swipeable-views": "^0.13.3",
+<<<<<<< HEAD
+    "react-virtualized": "^9.21.1",
+=======
     "react-tabs": "^3.0.0",
     "react-year-month-picker": "^1.0.0",
+>>>>>>> 132f0358e01d96b7e1c7279aaa3eb62010de577a
     "reactstrap": "^8.0.0"
   },
   "scripts": {

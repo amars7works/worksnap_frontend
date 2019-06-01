@@ -29,7 +29,11 @@ body{
 .Approve_history{
 background-color: white;
 /* height: 350px; */
+<<<<<<< HEAD
+margin-left: 30px;
+=======
 margin-left: 40px;
+>>>>>>> 132f0358e01d96b7e1c7279aaa3eb62010de577a
 margin-top: 25px;
 padding: 50px;
 border-radius: 10px;
@@ -101,6 +105,7 @@ position: relative;
 }
 .Approvehistory{
     float: left;
+    margin-left: 0px;
 }
 .Rejectedhistory{
     float: left;
@@ -124,8 +129,12 @@ position: relative;
 }
 .card{
         border-radius: 1.25rem !important;
+<<<<<<< HEAD
+        margin-left: 40px !important;
+=======
         margin-left: 15px;
         margin-top: 15px;
+>>>>>>> 132f0358e01d96b7e1c7279aaa3eb62010de577a
 
 }
 .react-datepicker {
@@ -140,7 +149,11 @@ position: relative;
         background: none !important;
 
 }
+<<<<<<< HEAD
+.card:nth-child(){
+=======
 /* .card:nth-child(1){
+>>>>>>> 132f0358e01d96b7e1c7279aaa3eb62010de577a
     margin-left: 0px !important;
 
 
@@ -158,6 +171,36 @@ position: relative;
     color:white;
     border-radius: 15px;
 }
+<<<<<<< HEAD
+.header{
+    margin-left: 40px;
+}
+
+@media (max-width:400px) and (min-width:360px)
+{
+    .Approve_history{
+        background-color: white;
+        /* height: 350px; */
+        margin-left: 10px;
+        margin-top: 25px;
+        padding: 50px;
+        border-radius: 10px;
+        margin-left: 29px;
+        
+        }
+        .Rejected_history{
+            background-color: white;
+            /* height: 350px; */
+            margin-left: 29px;
+            margin-top: 25px;
+            padding: 50px;
+            border-radius: 10px;
+               
+        }
+        .header{
+            margin-left: 80px;
+        }
+=======
 .modal-content {
     margin-top: 100px;
 }
@@ -181,5 +224,6 @@ position: relative;
         margin-top: 15px;
 
     }
+>>>>>>> 132f0358e01d96b7e1c7279aaa3eb62010de577a
 
 }
