@@ -5,6 +5,7 @@ body{
     margin-left: 0px !important;
     margin-right: 0px !important;
     margin-top: 25px;
+    
 }
 
 .btn-success {
@@ -28,7 +29,7 @@ body{
 .Approve_history{
 background-color: white;
 /* height: 350px; */
-margin-left: 10px;
+margin-left: 40px;
 margin-top: 25px;
 padding: 50px;
 border-radius: 10px;
@@ -92,6 +93,7 @@ position: relative;
 }
 .header h2{
     /* float: left; */
+    text-align: center;
 }
 .nav{
  box-shadow: none !important;
@@ -122,9 +124,12 @@ position: relative;
 }
 .card{
         border-radius: 1.25rem !important;
-        margin-left: 18px;
+        margin-left: 15px;
         margin-top: 15px;
 
+}
+.react-datepicker {
+    margin-left: -60px
 }
 
 .username{
@@ -135,11 +140,11 @@ position: relative;
         background: none !important;
 
 }
-.card:nth-child(1){
+/* .card:nth-child(1){
     margin-left: 0px !important;
 
 
-}
+} */
 .leave_history_title{
     font-weight:  bold;
 }
@@ -153,34 +158,28 @@ position: relative;
     color:white;
     border-radius: 15px;
 }
-
 .modal-content {
     margin-top: 100px;
 }
+.badge-secondary{
+    margin-left: 10px;
+    padding: 5px;
+}
+@media (max-width:768px) and (min-width:480px) {
+    .card{
+        margin: auto;
+        margin-top: 15px;
 
-@media (max-width:400px) and (min-width:360px)
-{
-    .Approve_history{
-        background-color: white;
-        /* height: 350px; */
-        margin-left: 10px;
-        margin-top: 25px;
-        padding: 50px;
-        border-radius: 10px;
-        margin-left: 29px;
-        
-        }
-        .Rejected_history{
-            background-color: white;
-            /* height: 350px; */
-            margin-left: 29px;
-            margin-top: 25px;
-            padding: 50px;
-            border-radius: 10px;
-               
-        }
-        .header{
-            margin-left: 40px;
-        }
+    }
+
+}
+
+@media (max-width:480px) and (min-width:320px) {
+    .card{
+        /* margin-left: 35px; */
+        margin: auto;
+        margin-top: 15px;
+
+    }
 
 }
