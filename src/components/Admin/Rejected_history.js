@@ -16,14 +16,27 @@ const MAX_ITEMS = 4;
 export class Rejected_history extends Component {
     constructor(props) {
         super(props);
+
         this.state ={
             posts:[],
             isOpen:false,
+            selected_date: new Date(),
 
             smShow: false,
              
         }
+        this.handleChange = this.handleChange.bind(this);
     }
+
+    handleChange(date) {
+      this.setState({
+         selected_date:date,
+        // selected:date,
+        // startDate: new Date(),
+      
+      })
+    }
+
     toggle = () => {
         this.setState({ isOpen: !this.state.isOpen });
       }
@@ -34,6 +47,7 @@ export class Rejected_history extends Component {
         }
         return this.state.posts.slice(0, MAX_ITEMS);
       }
+
     componentDidMount(){
         const config = {
             url: "/api/leave_rejected_list/",
@@ -49,7 +63,7 @@ export class Rejected_history extends Component {
 
             });
     
-            // console.log(res.data)
+             console.log(res.data)
         });
         
     
@@ -71,17 +85,24 @@ export class Rejected_history extends Component {
             </div>
             <div className="datepick">
             <DatePicker 
-                            className="Date-Picker" 
-                                name = "range1"
-                                ref="range1"
-                                id="range1"
-                                value={this.state.data_start} 
-                                placeholderText="Click to select a date"
-                                selected={this.state.startDate}
-                                selectsStart
-                                startDate={this.state.startDate}
-                                onChange={this.handleChangeStart}
+                            // className="Date-Picker" 
+                            //     name = "range1"
+                            //     ref="range1"
+                            //     id="range1"
+                            //     value={this.state.data_start} 
+                            //     placeholderText="Click to select a date"
+                            //     selected={this.state.startDate}
+                            //     selectsStart
+                            //     startDate={this.state.startDate}
+                            //     // onChange={this.handleChangeStart}
+                            //     onChange={this.handleChange}
+
+                                selected={ this.state.selected_date }
+                                onChange={ this.handleChange }
+                                dateFormat="YYYY-MM-dd"
+          
                             />
+
             </div>
        </div>
        </div>

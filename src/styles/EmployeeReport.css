@@ -22,10 +22,10 @@
   width: 20vw;
   float: left;
 }
-.right-main-content {
+/* .right-main-content {
   float: right;
   width: 80vw;
-}
+} */
 
 @media  (max-width: 359px) and (min-width:320px)
 

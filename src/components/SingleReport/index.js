@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NavBar from './Navbar/NavBar';
 import TopCard from './Topcard/TopCard';
-import Bottomcard from './Bottomcard/Bottomcard';
+// import Bottomcard from './Bottomcard/Bottomcard';
 
 export class SingleReport extends Component {
   render() {
@@ -9,7 +9,7 @@ export class SingleReport extends Component {
       <div className = "right-content">
        <NavBar />
        <TopCard />
-       <Bottomcard />
+       {/* <Bottomcard /> */}
       </div>
     )
   }

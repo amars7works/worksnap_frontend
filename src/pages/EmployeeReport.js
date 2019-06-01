@@ -12,7 +12,7 @@ class EmployeeReport extends React.Component {
 
     <div className ="app"> 
 
-      <TopNav />
+      {/* <TopNav /> */}
       <div className ="down-div">
       <div className = "left-vertical">
       <SideNav />

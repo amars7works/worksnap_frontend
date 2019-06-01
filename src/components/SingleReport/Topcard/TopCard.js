@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Topcard.css';
 import Profile_photo from './Profile_photo';
+// import { Redeem } from 'material-ui-icons';
 const axios = require('axios');
 class TopCard extends Component {
 
@@ -52,13 +53,17 @@ axios(config)
              <Profile_photo /> 
              </div>  
            
-        <div className="card_row">
-            <div className="col-md-3">
+        {/* <div className="card_row"  style={{background:'#FA7746'}}>
+      
+            <div className="col-md-3 sx-light">
+           
            Total Working days
              <p className="Number">{this.state.no_of_working_days}</p>
                    
+      
            </div>
             <div className="col-md-3">
+          
                 Total days worked
                <p className="Number">{this.state.no_of_days_worked}</p>
             </div>
@@ -70,10 +75,37 @@ axios(config)
                 Average day Hours
                 <p className="Number">{this.state.total_time_worked}</p>
             </div>
-        </div>
+        </div> */}
+        <div class="card-group CardSetting">
+  <div class="card bg-primary">
+    <div class="card-body text-center">
+      <p class="card-text ">  Total Working days</p>
+      <p className="Number">{this.state.no_of_working_days}</p>
 
-  
-      </div>
+    </div>
+  </div>
+  <div class="card bg-warning">
+    <div class="card-body text-center">
+      <p class="card-text">Total days worked</p>
+      <p className="Number_b">{this.state.no_of_days_worked}</p>
+    </div>
+  </div>
+  <div class="card bg-success">
+    <div class="card-body text-center">
+      <p class="card-text">Total Hours worked</p>
+      <p className="Number">{this.state.total_time_to_work}</p>
+    </div>
+  </div>
+  <div class="card bg-danger">
+    <div class="card-body text-center">
+      <p class="card-text">Average day Hours</p>
+      <p className="Number">{this.state.total_time_worked}</p>
+    </div>
+  </div> 
+</div>
+
+  </div>
+      
 
 
     
