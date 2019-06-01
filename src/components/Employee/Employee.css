@@ -75,8 +75,9 @@ a.navbar-brand {
   font-size: 12px;
   padding: 0px;
 
-  margin-left: 13vw;
+  margin-left: 19vw !important;
 }
+
 
 }
 

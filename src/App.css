@@ -36,6 +36,14 @@ body{
   float: left;
   height: 35px;
 }
+a.navbar-brand {
+  margin-left: 10vw;
+}
+.col-sm-6 {
+  flex: 0 0 50%;
+  max-width: 30% !important;
+}
+
 @media (max-width:400px) and (min-width:360px)
 {
   .leave-request{
