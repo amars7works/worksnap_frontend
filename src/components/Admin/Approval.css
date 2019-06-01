@@ -29,15 +29,7 @@ body{
 .Approve_history{
 background-color: white;
 /* height: 350px; */
-<<<<<<< HEAD
 margin-left: 30px;
-=======
-<<<<<<< HEAD
-margin-left: 30px;
-=======
-margin-left: 40px;
->>>>>>> 132f0358e01d96b7e1c7279aaa3eb62010de577a
->>>>>>> 02708cc2c8f282e2655aaac258aea7703edf7aa2
 margin-top: 25px;
 padding: 50px;
 border-radius: 10px;
@@ -133,19 +125,7 @@ position: relative;
 }
 .card{
         border-radius: 1.25rem !important;
-<<<<<<< HEAD
-
-        margin-left: 18px;
-=======
-<<<<<<< HEAD
-        margin-left: 40px !important;
-=======
-        margin-left: 15px;
->>>>>>> 02708cc2c8f282e2655aaac258aea7703edf7aa2
         margin-top: 15px;
->>>>>>> 132f0358e01d96b7e1c7279aaa3eb62010de577a
-
-
 }
 .react-datepicker {
     margin-left: -60px
@@ -159,19 +139,6 @@ position: relative;
         background: none !important;
 
 }
-<<<<<<< HEAD
-.card:nth-child(){
-=======
-<<<<<<< HEAD
-.card:nth-child(){
-=======
-/* .card:nth-child(1){
->>>>>>> 132f0358e01d96b7e1c7279aaa3eb62010de577a
->>>>>>> 02708cc2c8f282e2655aaac258aea7703edf7aa2
-    margin-left: 0px !important;
-
-
-} */
 .leave_history_title{
     font-weight:  bold;
 }
@@ -185,17 +152,13 @@ position: relative;
     color:white;
     border-radius: 15px;
 }
-<<<<<<< HEAD
 
 
 .modal-content {
     margin-top: 100px;
-
-=======
-<<<<<<< HEAD
+}
 .header{
     margin-left: 40px;
->>>>>>> 02708cc2c8f282e2655aaac258aea7703edf7aa2
 }
 
 @media (max-width:400px) and (min-width:360px)
@@ -222,13 +185,13 @@ position: relative;
         .header{
             margin-left: 80px;
         }
-=======
 .modal-content {
     margin-top: 100px;
 }
 .badge-secondary{
     margin-left: 10px;
     padding: 5px;
+}
 }
 @media (max-width:768px) and (min-width:480px) {
     .card{
@@ -246,6 +209,5 @@ position: relative;
         margin-top: 15px;
 
     }
->>>>>>> 132f0358e01d96b7e1c7279aaa3eb62010de577a
 
 }
