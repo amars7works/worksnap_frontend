@@ -34,7 +34,7 @@ componentDidMount(){
             console.log(res.data)
         });
         
-      }
+      }                      
 
   render() {
     return (
