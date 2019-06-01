@@ -4,22 +4,31 @@ ul.navbar-nav {
 }
 .card_row
 {
-height: 13vw;
-width: 58vw;
+height: 14vw;
+width: 73vw;
 border-radius:10px;
-background: #ffff;
+background:red;
 margin-right: 0px;
-right:-62px;
+right:20px;
 position: absolute;
-top: 16%;
+top: 24%;
 display: flex;
 
 }
 .Number 
 {
     font-size: 30px;
-    color:lightblue;
+    color:black;
     text-align: center;
+    font-weight: bold;
+}
+.Number_b 
+{
+    font-size: 30px;
+    color:black;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 40px;
 }
 
 .col-md-3
@@ -28,6 +37,19 @@ display: flex;
     font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   
 }
+
+.CardSetting
+{
+
+    height:140px;
+    position:absolute;
+    display: inline-block;
+    margin-left: 25vw;
+    margin-top:75px;
+    width:70%;
+   
+}
+
 
 @media  (max-width: 359px) and (min-width:320px)
 {

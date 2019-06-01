@@ -171,6 +171,11 @@ function CustomNavigation() {
           <MenuItem component={Link} to = "/">
             Dashboard
             </MenuItem>,
+
+            <MenuItem component={Link} to = "/frd/EmployeeList/">
+            EmployeeList Table           
+            </MenuItem>,
+            
           <MenuItem component={Link} to = "/frd/employees/">
             Employees           
             </MenuItem>,
@@ -238,7 +243,6 @@ function CustomNavigation() {
             <MenuItem component={Link} to = "/frd/EmployeeList/">
             Employee List Table 
             </MenuItem>
-
             <MenuItem component={Link} to = "/" onClick={() => {SecureLogoutUser()}}>
             Logout
             </MenuItem>

@@ -26,10 +26,11 @@ export class Profile_photo extends Component {
           this.setState({
            
              users_data:res.data,
+            //  users:res.data,
               
                        });
           
-
+console.log("data is ",users)
        var users=[];
           for (let [key,value] of Object.entries(res.data)){
            

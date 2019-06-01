@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import isAfter from "date-fns/isAfter";
 import 'font-awesome/css/font-awesome.min.css';
 import Flower from './Flower.jpeg';
-import './Navbar.css';
+import '././Navbar.css';
 
 export class NavBar extends Component {
   render() {

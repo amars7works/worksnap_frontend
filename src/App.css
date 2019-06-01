@@ -22,15 +22,15 @@ body{
   width: 100%;
 }
 
-.right-main-content {
+/* .right-main-content {
     float: right;
     width: 80vw;
     position: absolute;
-}
-.right-content {
+} */
+/* .right-content {
     position: absolute;
     margin-left: 20vw;
-}
+} */
 .input.fa.fa-search.search-text {
   width: 17vw;
   float: left;
