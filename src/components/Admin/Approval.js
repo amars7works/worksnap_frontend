@@ -8,7 +8,8 @@ import {
   Modal
 } from "react-bootstrap";
 // import DatePicker from "react-datepicker";
-import moment from "moment";
+import moment from 'moment';
+// import HorizontalScroll from 'react-scroll-horizontal'
 
 import "react-datepicker/dist/react-datepicker.css";
 import "./Approval.css";

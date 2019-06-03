@@ -179,6 +179,9 @@ function CustomNavigation() {
           <MenuItem component={Link} to = "/frd/employees/">
             Employees           
             </MenuItem>,
+            <MenuItem component={Link} to = "/frd/Employee_form/">
+            Employee_From           
+            </MenuItem>,
             <MenuItem component={Link} to = "/">
             Leave Request
             </MenuItem>,
@@ -233,8 +236,12 @@ function CustomNavigation() {
 <
             </MenuItem>
 
-            <MenuItem component={Link} to = "/frd/employees/">
-            Employees           
+            <MenuItem component={Link} to = "/frd/employee">
+            Total Emloyees           
+            </MenuItem>
+
+            <MenuItem component={Link} to = "/frd/dailyreport/">
+          Daily Report            
             </MenuItem>
 
             <MenuItem component={Link} to = "/frd/requests/">

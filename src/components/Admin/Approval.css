@@ -125,10 +125,11 @@ position: relative;
 }
 .card{
         border-radius: 1.25rem !important;
+
+        margin-left: 18px;
         margin-top: 15px;
-}
-.react-datepicker {
-    margin-left: -60px
+
+
 }
 
 .username{
@@ -137,6 +138,11 @@ position: relative;
 }
 .react-datepicker__input-container {
         background: none !important;
+
+}
+.card:nth-child(){
+    margin-left: 0px !important;
+
 
 }
 .leave_history_title{
@@ -156,6 +162,7 @@ position: relative;
 
 .modal-content {
     margin-top: 100px;
+
 }
 .header{
     margin-left: 40px;
