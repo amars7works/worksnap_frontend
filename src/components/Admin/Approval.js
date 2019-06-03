@@ -19,6 +19,8 @@ import Approve_history from "./Approve_history";
 import Rejected_history from "./Rejected_history";
 import numeral from "numeral";
 
+//Employer Leave Approval page
+
 class Approval extends Component {
   constructor(props) {
     super(props);
@@ -68,7 +70,7 @@ class Approval extends Component {
     });
     console.log(config1);
   }
-
+//If Employer Approve the request then it will send the information to the Employee 
   approvedRequest(id) {
     console.log("id is", id);
 
@@ -89,6 +91,8 @@ class Approval extends Component {
     this.status("Approved", id);
     // this.status(posts.id)
   }
+
+//If Employer accpet the request then it will send the information to the Employee 
 
   declineRequest(id) {
     console.log("id is", id);
@@ -193,7 +197,7 @@ class Approval extends Component {
             )}
           </div>
         </div>
-        <div className="col-md-6 Approvehistory">
+        <div className="col-md-6 Approvehistory">  
           <Approve_history />
         </div>
         <div className="col-md-6 Rejectedhistory">

@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 // import isAfter from "date-fns/isAfter";
 import { Input } from "reactstrap";
 import axios from "axios";
-
+//Leave Request page for Employee Panel
 export class Leave extends Component {
   constructor(props, context) {
     super(props, context);
@@ -23,7 +23,7 @@ export class Leave extends Component {
     // this.leaveRequestStatus =this.leaveRequestStatus.bind(this)
 
     this.state = {
-      show: false,
+      show: false,          
       selected_option: "",
       textarea_text: "",
       startDate: new Date(),

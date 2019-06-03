@@ -11,7 +11,7 @@ import TextField from '@material-ui/core/TextField';
 import CustomNavigation from '../SideNavbar/SideNavbar';
 import './Employeee.css';
 
-
+// Total number of in Employer page
 function TabContainer({ children, dir }) {
   return (
     <Typography component="div" dir={dir} style={{ padding: 8 * 3 ,marginTop:0}}>

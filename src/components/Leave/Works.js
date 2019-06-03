@@ -7,7 +7,9 @@ import axios from 'axios'
 // import isAfter from "date-fns/isAfter";
 // import {Input} from 'reactstrap';
 
-// const axios = require('axios');
+
+//WorkFromHome Request page for Employee Panel
+
 export class Works extends Component {
 
     constructor(props, context) {

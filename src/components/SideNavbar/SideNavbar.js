@@ -18,10 +18,14 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { MenuItem } from "@material-ui/core";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import { SecureLogoutUser } from "../Networks/Auth";
 import Dashboard from "@material-ui/icons/Dashboard";
 import { EmployerAuthRoute } from "../SimplifiedAuthRoute";
+import WorksnapDownload from "./WorksnapDownload";
+
+// Employer header and sideNav using UI material
+
+
 
 const drawerWidth = 240;
 
@@ -91,7 +95,7 @@ function CustomNavigation() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  // const thisYear = (new Date()).getFullYear();
+  
 
   function handleDrawerOpen() {
     setOpen(true);
@@ -101,14 +105,7 @@ function CustomNavigation() {
     setOpen(false);
   }
 
-  // function monthYear(){
-  //   console.log("monthYear function")
-  //   this.setState({
-  //     thisYear:evt.target.value
-
-  //   })
-
-  // }
+  
 
 
   return (
@@ -163,7 +160,6 @@ function CustomNavigation() {
         </div>
         <Divider />
 
-
 <EmployerAuthRoute >
          <List >
           {[ 
@@ -186,6 +182,8 @@ function CustomNavigation() {
             Leave Request
             </MenuItem>,
 
+            
+
             <MenuItem component={Link} to = "/" onClick={() => {SecureLogoutUser()}}>
             Logout
             </MenuItem>,
@@ -201,13 +199,13 @@ function CustomNavigation() {
 
 
 <div>
-
-<List>
+<WorksnapDownload/>
+{/* <List>
 {[ 
 
-<IconButton aria-label="Delete" className={classes.margin} size="small">
+<IconButton aria-label="Delete" className={classes.margin} size="small" onClick={(e)=> this.props.monthYear()}>
   {/* <ArrowDownwardIcon fontSize="inherit" /> */}
-  WorkSnap Report
+  {/* WorkSnap Report
 </IconButton>
     ].map((text, index) => (
       <ListItem button key={text}>
@@ -216,7 +214,7 @@ function CustomNavigation() {
         <ListItemText primary={text} />
       </ListItem>
     ))} 
- </List>
+ </List> */} 
 
  </div>
 
@@ -243,7 +241,7 @@ function CustomNavigation() {
             <MenuItem component={Link} to = "/frd/dailyreport/">
           Daily Report            
             </MenuItem>
-
+         
             <MenuItem component={Link} to = "/frd/requests/">
             Leave Request
             </MenuItem>
