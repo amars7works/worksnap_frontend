@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
+
+// To check the request status
 export class Requestsent extends Component {
     constructor(props, context) {
         super(props, context);
@@ -9,6 +11,7 @@ export class Requestsent extends Component {
 
         }
     }
+
     componentDidMount(){
         const config = {
             url: "/api/get_leave_status/",

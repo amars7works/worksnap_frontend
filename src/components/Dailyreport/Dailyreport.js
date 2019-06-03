@@ -8,7 +8,8 @@ import axios from 'axios'
 
 // import isAfter from "date-fns/isAfter";
 
-// const axios = require('axios');
+
+//DailyReport Page in Employee Panel
 
 class Dailyreport extends Component {
 

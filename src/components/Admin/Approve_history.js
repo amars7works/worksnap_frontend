@@ -10,6 +10,9 @@ import axios from "axios";
 
 const MAX_ITEMS = 4;
 
+
+//To check the Approval history Status in Employer Page
+
 export class Approve_history extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +20,6 @@ export class Approve_history extends Component {
       posts: [],
       isOpen: false,
       startDate: new Date(),
-
       smShow: false
     };
   }

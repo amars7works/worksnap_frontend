@@ -24,7 +24,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import { SecureLogoutUser } from '../Networks/Auth';
 import Dashboard  from '@material-ui/icons/Dashboard';
 import { EmployerAuthRoute } from '../SimplifiedAuthRoute';
-
+// Employee header and sideNav using UI material
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({

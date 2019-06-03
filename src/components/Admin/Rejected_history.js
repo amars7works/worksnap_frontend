@@ -1,17 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {Button,ButtonToolbar,Modal} from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import moment from 'moment';
-
-import "./Approval.css"
-
+import "./Approval.css";
 import "react-datepicker/dist/react-datepicker.css";
 
-
-
-import axios from 'axios'
+import axios from 'axios';
 
 const MAX_ITEMS = 4;
+
+//To check the Rejected history Status in Employer Page
 
 export class Rejected_history extends Component {
     constructor(props) {
