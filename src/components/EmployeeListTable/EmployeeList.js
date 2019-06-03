@@ -14,11 +14,12 @@ export class EmployeeList extends Component{
 	    constructor (props) {
     super(props)
     this.state = {
-      selected_date:'',
+      selected_date:new Date(),
       selected:'',
       array:[],
     };
     this.handleChange = this.handleChange.bind(this);
+    this.fetchLeaveListData = this.fetchLeaveListData.bind(this);
     
   }
 
@@ -26,44 +27,46 @@ export class EmployeeList extends Component{
     this.setState({
       selected_date:date,
       // selected:date,
+    },()=>{
+      this.fetchLeaveListData();
     })
   }
- 
+ fetchLeaveListData(){
+  //  console.log("selected date is: ",this.state.selected_date)
+  const config = {
+    url: "/api/present_or_leave_list/",
+    method: 'GET',
+    withCredentials: true,
+    params:{
+   
+      date:moment(this.state.selected_date).format('YYYY-MM-DD')
+        
+   },
+
+}
+axios(config)
+.then((res) => {
+    this.setState({
+      array: res.data,
+       
+    });
+
+});
+ }
 
 componentDidMount(){
-  const config = {
-      url: "/api/present_or_leave_list/",
-      method: 'GET',
-      withCredentials: true,
-      params:{
-        // date:moment(this.state.selected_date).format('YYYY-MM-DD'),
-        date:moment().format('YYYY-MM-DD'),
-          
-     },
-
-  }
-  axios(config)
-  .then((res) => {
-      this.setState({
-        array: res.data,
-         
-      });
-
-      console.log(res.data )
-      console.log(typeof(date))
-     
-     
-  });
   
+  this.fetchLeaveListData()
 }
 
-  
-    
-  
 	render(){
-		return(
-			<div>            	
-           <label className="label_design">Select Date: </label>
+    const { CustomNavigation } = this.props
+    return (
+      <div>
+        <CustomNavigation />
+        <div className="container">
+	            	
+           <label className="label_design">Select Date: </label> 
             <DatePicker
               className="date_design"
               selected={ this.state.selected_date }
@@ -71,31 +74,34 @@ componentDidMount(){
               dateFormat="YYYY-MM-dd"
               // dayClassName={date => getDate(date) < Math.random() * 31 ? 'random' : undefined} />
               />
-             
-
-             
-         	
+       
+       <label className="label_design_headding">EmployeeList Table  </label>
+     
      <div>
   
-				
+     		
 <table className="table table_design table-bordered" style={{float:"left"}}>
-  <tr>
-  
-    <th>Employee Name</th>
+ <thead>
+     <tr>
+     <th>Employee Name</th>
     <th>Attendence (Leave/Present)</th>
     <th>Working hours on that day</th>
   </tr>
+ </thead>
+
   {this.state.array.map(post=>
+
   <tr>
    <td>{post.user_name}</td>
     <td>{post.status}</td>
     <td>{post.duration}</td>
      </tr>
+   
   )}
-  
+ 
 </table>
 				</div>
-			
+			</div>
 				</div>
 
 
