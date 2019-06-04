@@ -160,7 +160,7 @@ class Dailyreport extends Component {
                   </div>
 
                   <div className="col-md-3 date">    
-                      <DatePicker 
+                      {/* <DatePicker 
                         className="form-control" 
                           name = "range1"
                           ref="range1"
@@ -172,7 +172,7 @@ class Dailyreport extends Component {
                           startDate={this.state.startDate}
                           onChange={this.handleChangeStart}
                       // dateFormat="MM/DD/YYYY"
-                      />
+                      /> */}
                     </div>
                     
                   </div>

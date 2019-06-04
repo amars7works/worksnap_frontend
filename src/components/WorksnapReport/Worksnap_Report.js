@@ -1,168 +1,117 @@
-import React, { Component } from 'react'
-import DatePicker from "react-datepicker";
-import ReactTable from 'react-table';
-// import ExportToExcel from './ExportToExcel'
-import "react-table/react-table.css";
-import "react-datepicker/dist/react-datepicker.css";
-import "./Api.css"
-import YearMonthPicker from 'react-year-month-picker'
+import React, { Component } from 'react';
+import { Input } from "reactstrap";
+import './Worksnap_Report.css';
+import axios from "axios";
 
-export class Api extends Component {
+export class WorksnapReport extends Component {
 
     constructor(props) {
         super(props);
     
-        this.handleChangeStart = this.handleChangeStart.bind(this)
-        this.handleChangeEnd = this.handleChangeEnd.bind(this)
-        this.handleChange = this.handleChange.bind(this)
-    
+        this.selectOptions = this.selectOptions.bind(this);
+
         this.state = {
           
-          startDate: new Date(),
-          endDate: new Date(),
+         
+         selected_option: "",
           posts:[],
           scheduled: null
 
         };
       }
 
-    handleChange = ({ startDate, endDate }) => {
-        startDate = startDate || this.state.startDate;
-        endDate = endDate || this.state.endDate;
-    
-        // if (isAfter(startDate, endDate)) {
-        //   endDate = startDate;
-        // }
-        //console.log(startDate, endDate)
-        this.setState({ startDate, endDate });
-      };
-    
-      handleChangeStart = startDate => this.handleChange({ startDate });
-    
-      handleChangeEnd = endDate => this.handleChange({ endDate });  
+      handleSubmit(){
+        console.log("handle submit")
+          const year = new Date().getFullYear();
+          // console.log(year,posts)
 
-      componentDidMount(){
-        const url = "https://jsonplaceholder.typicode.com/users"; 
-        fetch(url ,{
-            method:"GET"
-        })
-        .then(res => res.json())
-        .then (posts => {
-            this.setState({
-                posts:posts,
-            })
-        });
-    }
-    handleChange (m) {
-      this.setState({scheduled: m}, () => console.log(this.state.scheduled))
-    }
+          // posts ={
+          //   month:this.state.selected_option,
+          // }
+        
+        
+        }
+
      
-  render() {
-    const columns =[
-        {
-            Header:"User ID",
-            accessor : "id"
-        },
-        {
-          Header:"Username",
-          accessor : "username"
-      },
+    componentDidMount() {
       
-      {
-          Header:"Street",
-          accessor : "street"
-      },
-      {
-        Header:"Street",
-        accessor : "street"
-    },
-    {
-        Header:"Name",
-        accessor : "name"
-    },
-    {
-        Header:"City",
-        accessor : "city"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
-    },
-    {
-        Header:"Zipcode",
-        accessor : "zipcode"
     }
-    ]
+
+
+    selectOptions(e) {
+      const year = new Date().getFullYear();
+      let value = e.target.value;
+      console.log("year is",year)
+      console.log("value is",value)
+      const config = {
+        url: "api/user_report/",
+        method: "GET",
+        withCredentials: true,
+        params:{
+          month:value,
+          year:year,
+          user_name	:'all',
+
+        }
+        // posts:[]
+
+      };
+      axios(config).then(res => {
+        console.log("response is:",res.data)
+        this.setState({
+          posts: res.data
+        });
+  
+        // console.log(res.data)
+      });
+      this.setState({
+        selected_option: value
+      });
+    }
+
+
+
+  render() {
+    const { CustomNavigation } = this.props;
+
     return (
       <div>
-          <div className="row">
-          <div className="col-md-6 Work_snapReport">
+                <CustomNavigation />
+                <div className="container">
+
+          <div className="Work_snapReport">
           <h4>Work Snap Employees Report</h4>
+          <div className="col-md-3 Work_snapReport">
+
+          <Input
+                      type="select"
+                      className="custom-select"
+                      name="selected_option"
+                      value={this.state.selected_option}
+                      ref="selected_option"
+                      id="selected_option"
+                      onChange={this.selectOptions}
+                      // onClick={this.handleSubmit}
+                    >
+                      <option value="">select Month</option>
+                      <option value="1">January</option>
+                      <option value="2">February</option>
+                      <option value="3">March</option>
+                      <option value="4">April</option>
+                      <option value="5">May</option>
+                      <option value="6">June</option>
+                      <option value="7">July</option>
+                      <option value="8">August</option>
+                      <option value="9">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </Input>
         </div>
         
 
 
-      <div>
-        <YearMonthPicker
-          closeOnSelect
-          onChange={this.handleChange.bind(this)}
-        />
+       
       </div>
 
         </div>
@@ -170,37 +119,18 @@ export class Api extends Component {
 
 
         
-      <ReactTable 
-      columns={columns}
-      data={this.state.posts}
-      filterable
-      defaultPageSize={100}
-      // defaultPageSize={20}
-      showPagination={false}
-      style={{
-        height: "400px" // This will force the table body to overflow and scroll, since there is not enough room
-      }}
-      >
-        {/* {(state,filteredDate,instance) => {
-          this.reactTable = state.pageRows.map(post=>{return post._original});
-          return(
-            <div>
-              {filteredDate()}
-              <ExportToExcel posts={this.ReactTable}/>
-            </div>
-          )
-        }} */}
+      
 
 
 
 
 
-          </ReactTable>
        
-        </div>
       </div>
+      </div>
+
     )
   }
 }
 
-export default Api
+export default WorksnapReport
