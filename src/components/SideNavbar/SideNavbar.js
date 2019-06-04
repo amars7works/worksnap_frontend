@@ -21,7 +21,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import { SecureLogoutUser } from "../Networks/Auth";
 import Dashboard from "@material-ui/icons/Dashboard";
 import { EmployerAuthRoute } from "../SimplifiedAuthRoute";
-import WorksnapDownload from "./WorksnapDownload";
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 
 // Employer header and sideNav using UI material
 
@@ -199,13 +199,13 @@ function CustomNavigation() {
 
 
 <div>
-<WorksnapDownload/>
-{/* <List>
+{/* <WorksnapDownload/> */}
+ <List>
 {[ 
 
-<IconButton aria-label="Delete" className={classes.margin} size="small" onClick={(e)=> this.props.monthYear()}>
+<IconButton aria-label="Delete" className={classes.margin} size="small" component={Link} to = "/frd/worknap_report/" >
   {/* <ArrowDownwardIcon fontSize="inherit" /> */}
-  {/* WorkSnap Report
+   WorkSnap Report
 </IconButton>
     ].map((text, index) => (
       <ListItem button key={text}>
@@ -214,7 +214,7 @@ function CustomNavigation() {
         <ListItemText primary={text} />
       </ListItem>
     ))} 
- </List> */} 
+ </List> 
 
  </div>
 
