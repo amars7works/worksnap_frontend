@@ -44,7 +44,7 @@ export class WorksnapReport extends Component {
       console.log("year is",year)
       console.log("value is",value)
       const config = {
-        url: "api/user_report/",
+        url: "/api/user_report/",
         method: "GET",
         withCredentials: true,
         params:{
