@@ -21,17 +21,12 @@ class Total extends Component {
         <div className ="col-md-4 leave-request" style={{borderRadius:'2px solid black'}}>
     <Leave/>
     <br/>
-    <br/>
-    <br/>
     <Works/>
-    <br/>
-    <br/>
     <br/>
     <Nightshift/>
     <br/>
     <br/>
-    <br/>
-    <br/>
+    
 
     </div>
 

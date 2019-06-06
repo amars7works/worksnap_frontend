@@ -133,7 +133,7 @@ class Approval extends Component {
                 <Nav.Item>
                 <Nav.Link href=" ">Leave Request</Nav.Link>
                 </Nav.Item>
-                
+                  
                 </Nav> */}
           </div>
 
@@ -197,10 +197,10 @@ class Approval extends Component {
             )}
           </div>
         </div>
-        <div className="col-md-6 Approvehistory">  
+        <div className="col-md-8 Approvehistory">  
           <Approve_history />
         </div>
-        <div className="col-md-6 Rejectedhistory">
+        <div className="col-md-8 Rejectedhistory">
           <Rejected_history />
         </div>
       </div>

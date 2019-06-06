@@ -39,6 +39,8 @@ border-radius: 10px;
 
     margin-top: 25px;
     padding: 50px;
+    margin-left: 40px;
+
     border-radius: 10px;
 
 
@@ -98,10 +100,11 @@ position: relative;
  background-color: none !important; 
 }
 .Approvehistory{
-    float: left;
+    margin: auto;
 }
 .Rejectedhistory{
-    float: left;
+    margin: auto;
+
 }
 .date{
     font-size: 15px;
@@ -138,11 +141,12 @@ position: relative;
         background: none !important;
 
 }
-/* .card:nth-child(1){
-    margin-left: 0px !important;
+.card:nth-child(1){
+    margin-left: 215px !important;
 
 
-} */
+
+}
 .leave_history_title{
     font-weight:  bold;
 }
