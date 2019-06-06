@@ -28,17 +28,18 @@ TabContainer.propTypes = {
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 1210,
+    width: 959,
     marginTop:0,
+    marginLeft:240,
   },
 
   container: {
-    display: 'flex',
+    display: 'inline-block',
     flexWrap: 'wrap',
     marginLeft:'10vw !important',
   },
   container1: {
-    display: 'flex',
+    display: 'inline-block',
     flexWrap: 'wrap',
     marginLeft:'4vw !important',
     marginTop:'0px  !important',

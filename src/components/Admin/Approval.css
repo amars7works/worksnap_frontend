@@ -1,4 +1,3 @@
-
 .employrequest{
     margin-left: 0px !important;
     margin-right: 0px !important;
@@ -123,14 +122,15 @@ position: relative;
     background-color: none !important;
 
 }
-.card{
-        border-radius: 1.25rem !important;
-
-        margin-left: 18px;
-        margin-top: 15px;
-        width: 95% !important;
-
-
+.leaveCard{
+    width: 95% !important;
+    border-radius: 1.25rem !important;
+    
+    margin-left: 18px;
+    margin-top: 15px;
+    }
+.react-datepicker {
+    margin-left: -60px
 }
 .slick-slider{
     margin-left: 215px;
@@ -143,8 +143,9 @@ position: relative;
         background: none !important;
 
 }
-.card:nth-child(){
-    margin-left: 0px !important;
+.card:nth-child(1){
+    /* margin-left: 215px !important; */
+
 
 
 }
@@ -161,47 +162,12 @@ position: relative;
     color:white;
     border-radius: 15px;
 }
-
-
-.modal-content {
-    margin-top: 100px;
-
-}
-.header{
-    margin-left: 40px;
-}
-
-@media (max-width:400px) and (min-width:360px)
-{
-    .Approve_history{
-        background-color: white;
-        /* height: 350px; */
-        margin-left: 10px;
-        margin-top: 25px;
-        padding: 50px;
-        border-radius: 10px;
-        margin-left: 29px;
-        
-        }
-        .Rejected_history{
-            background-color: white;
-            /* height: 350px; */
-            margin-left: 29px;
-            margin-top: 25px;
-            padding: 50px;
-            border-radius: 10px;
-               
-        }
-        .header{
-            margin-left: 80px;
-        }
 .modal-content {
     margin-top: 100px;
 }
 .badge-secondary{
     margin-left: 10px;
     padding: 5px;
-}
 }
 @media (max-width:768px) and (min-width:480px) {
     .card{

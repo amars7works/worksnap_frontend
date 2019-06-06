@@ -1,24 +1,18 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-// import List from '@material-ui/core/List';
-// import ListItem from '@material-ui/core/ListItem';
-// import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
-// import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-// import ListItemText from '@material-ui/core/ListItemText';
-// import Avatar from '@material-ui/core/Avatar';
-// import IconButton from '@material-ui/core/IconButton';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-// import Grid from '@material-ui/core/Grid';
-// import Typography from '@material-ui/core/Typography';
-// import FolderIcon from '@material-ui/icons/Folder';
-// import DeleteIcon from '@material-ui/icons/Delete';
-// import Divider from '@material-ui/core/Divider';
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Grow from '@material-ui/core/Grow';
+import Paper from '@material-ui/core/Paper';
+import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Checkbox from '@material-ui/core/Checkbox';
+import SearchBar from 'material-ui-search-bar'
+import './Employee_form.css';
+import CustomNavigation from '../SideNavbar/SideNavbar';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -26,208 +20,384 @@ import { func } from 'prop-types';
 
 
 const useStyles = makeStyles(theme => ({
-
   root: {
-    flexGrow: 1,
-    maxWidth: 752,
+    display: 'flex',
   },
-  demo: {
-    backgroundColor: theme.palette.background.paper,
+  paper: {
+    marginRight: theme.spacing(2),
+    overflow:'auto',
+    [theme.breakpoints.up('xs')]: {
+      marginRight: theme.spacing(2),
+    overflow:'auto',
+    marginLeft:'-10px',
+    },
+    [theme.breakpoints.between('sm','md')]: {
+      marginRight: theme.spacing(2),
+    overflow:'auto',
+    marginLeft:'-10px',
+    }
   },
-  title: {
-    margin: theme.spacing(4, 0, 2),
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: 200,
-  },
+ 
+  MuiInputroot: {
+    position: 'relative',
+    marginLeft: '22vw',
+    marginTop: 24,
+    [theme.breakpoints.up('xs')]: {
+      position: 'relative',
+      marginLeft: '16vw',
+      marginTop: 24,
+    },
+    [theme.breakpoints.between('sm','md')]: {
+       display: 'inline-flex',
+      marginLeft: '22vw',
+      marginTop: 10,
+      width:253,
+    }
+},
+row:
+{
+backgroundColor:'#A3B9FF',
+height:75,
+marginTop:-48,
+width:'100%',
+[theme.breakpoints.up('xs')]: {
+  width: '100%',
+  backgroundColor:'#A3B9FF',
+  height:75,
+  marginTop:0,
+},
 
-  Form_design:
-  {
-      margin:70,
-      width:"80%",
-      height:460,
-      background:'#E3CED7',
-      padding:30,
-      borderRadius:10
+[theme.breakpoints.between('sm','md')]: {
+  width: '100%',
+  backgroundColor:'#A3B9FF',
+  height:75,
+  marginTop:0,
+}
 
+},
+date_design:
+{
+marginLeft:20,
+[theme.breakpoints.up('xs')]: {
+  marginLeft: 6,
+  width: 130,
+  display:'block',
+},
+[theme.breakpoints.between('sm','md')]: {
+  marginLeft: 6,
+  width: 130,
+  
+}
+},
+
+works_option:{
+  marginTop:20,
+  marginLeft:'5vw',
+  [theme.breakpoints.up('xs')]: {
+    marginTop:20,
+    marginLeft: '1vw',
+    width: 75,
   },
-  label_design:{
-    //   marginLeft:20
-    color:'#5380F7'
-  },
-  button: {
+  [theme.breakpoints.between('sm','md')]: {
+    marginTop:20,
+    marginLeft: '3vw',
+    width: 145,
+  }
+
+},
+button: {
+  margin: theme.spacing(1),
+  [theme.breakpoints.up('xs')]: {
     margin: theme.spacing(1),
-    width:20,
-    // position:"absolute",
-    float:"right",
-    borderRadius:15,
-    background:"gray",
-    color:'#641E16',
-    marginLeft:"25vw",
   },
-  formControl: {
+  [theme.breakpoints.between('sm','md')]: {
     margin: theme.spacing(1),
-    minWidth: 120,
+  }
+},
+EmployeeNames:
+{
+marginTop:20,
+marginLeft:'10vw',
+[theme.breakpoints.up('xs')]: {
+  marginTop:20,
+  marginLeft: '1vw',
+  width: 85,
+},
+[theme.breakpoints.between('sm','md')]: {
+  marginTop:20,
+  marginLeft: '18vw',
+  width: 145,
+},
+[theme.breakpoints.up('lg')]: {
+  marginTop:20,
+  marginLeft: '26vw',
+  width: 145,
+}
+},
+ mainmenu : {
+  width: '200px',
+  height: '300px',
+  overflow:'auto',
+  [theme.breakpoints.up('xs')]: {
+    width: '146px',
+  height: '300px',
+  overflow:'auto',
+  marginLeft:-15,
   },
-
-}));
-function DatePickers() {
-    const classes = useStyles();
-}  
-
-
-
-function Employee_form() {
-  const classes = useStyles();
-  const [dense, setDense] = React.useState(false);
-  const [secondary, setSecondary] = React.useState(false);
-  const [Work, setWork] = React.useState('');
-  const [open, setOpen] = React.useState(false);
-  const label=React.useState(false);
-
-  function handleChange(event) {
-    setWork(event.target.value);
+  [theme.breakpoints.between('sm','md')]: {
+    width: '190px',
+  height: '300px',
+  overflow:'auto',
+  marginLeft:-15,
   }
   
-  function handleClose() {
+ },
+ search_button:{
+    margin:'0 auto',
+    padding:0,
+    maxWidth: 200,
+    height:40,
+    [theme.breakpoints.up('xs')]: {
+      margin:'0 auto',
+    padding:0,
+    height:40,
+    maxWidth: 170,
+    marginLeft: 17,
+},
+[theme.breakpoints.between('sm','md')]: {
+  margin:'0 auto',
+padding:0,
+height:40,
+maxWidth: 170,
+marginLeft: 17,
+}
+ },
+ MuiTouchRipplerootutton:{
+   marginLeft:'50vw',
+   marginTop:20,
+   borderRadius:20,
+
+ } 
+ 
+}));
+//Employee form showing employee and work option of particular date 
+function Employee_Form() {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  // const [Work, setWork] = React.useState('');
+  const anchorRef = React.useRef(null);
+ 
+  const [state, setState] = React.useState({
+    checkedB: true,
+ 
+   
+  });
+  
+  const handleChange = name => event => {
+    setState({ ...state, [name]: event.target.checked });
+  };
+
+  function handleToggle() {
+    setOpen(prevOpen => !prevOpen);
+  }
+
+  function handleClose(event) {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
+    }
+
     setOpen(false);
   }
-  
   function handleOpen() {
     setOpen(true);
   }
-  // function Listofemployees()
-  // {
-  //   {this.state.label}
-  // }
-
+  
+   
+ 
   return (
-      <div>
-      <div className={classes.Form_design}>
-          <label className={classes.label_design} >Select Date</label>  
-        <TextField
+    <div>
+
+    <div>  <CustomNavigation/></div>
+    <div className={classes.row}>
+    <div className={classes.root}>
+    <div className={classes.MuiInputroot}>  
+        {/* Select the Date */}
+    <label>Select date:</label>
+   <TextField
         id="date"
-        // label="Select Date"
         type="date"
         defaultValue="2017-05-24"
         className={classes.textField}
+        className={classes.date_design}
         InputLabelProps={{
           shrink: true,
         }}
+  
       />
-
-<form autoComplete="off">
-<label className={classes.label_design}>Select Work Option </label> 
-      {/* <Button className={classes.button} onClick={handleOpen}>
-        Open the select
-      </Button> */}
-   
-      <FormControl className={classes.formControl}>
-        {/* <InputLabel htmlFor="demo-controlled-open-select">Age</InputLabel> */}
-        <Select
-          open={open}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          value={Work}
-          onChange={handleChange}
-          inputProps={{
-            name: 'work_from_home',
-            id: 'demo-controlled-open-select',
-          }}
+      </div>
+    {/* selecting wroking option  */}
+      <div className={classes.works_option}>
+      <select className="browser-default custom-select" >
+      <option value="1">Select from list</option>
+ <option value="1">Work from home</option>
+  <option value="2">Works from office</option>
+  <option value="3">None</option>
+</select>
+</div>
+      
+      <div className={classes.EmployeeNames}>
+         <Button
+          ref={anchorRef}
+          aria-controls="menu-list-grow"
+          aria-haspopup="true"
+          onClick={handleToggle}
+          mx={4.5}
+    
         >
-         
-          <MenuItem value="work_from_home">Work from home</MenuItem>
-          <MenuItem value="work_from_office">work from office</MenuItem>
-          <MenuItem value="None">None</MenuItem>
-        </Select>
-      </FormControl>
-    </form>
+          Employee Names
+         </Button> 
+        {/* Creating dropmenu of employee name   */}
 
+        <Popper open={open} anchorEl={anchorRef.current} keepMounted transition disablePortal>
+          {({ TransitionProps, placement }) => (
+            <Grow
+              {...TransitionProps}
+              style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+            >
+              <Paper id="menu-list-grow">
+                <ClickAwayListener onClickAway={handleClose}>
+                  <MenuList className={classes.mainmenu}>
+                  <SearchBar
+      onChange={() => console.log('onChange')}
+      onRequestSearch={() => console.log('onRequestSearch')}
+      className={classes.search_button}
+      
+    />
+    <MenuItem > 
+    <Checkbox
+        // checked={state.checkedB}
+        onChange={handleChange('checkedB')}
+        value="checkedB"
+        color="primary"
+        inputProps={{
+          'aria-label': 'secondary checkbox',
+        }}
+      />Manishankar</MenuItem>
 
-
-       {/* <label className={classes.label_design}>Work from home</label> */}
-    <div className={classes.root}>
-      <FormGroup >
-        <FormControlLabel
-          control={
-            <Checkbox
-            //   checked={dense}
-              onChange={event => setDense(event.target.checked)}
-            //   value="dense"
-            />
-          }
-          label="Mani shankar"
-        />
-
-       
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={secondary}
-              onChange={event => setSecondary(event.target.checked)}
-            //   value="secondary"
-            />
-          }
-          label="Dileep kumar"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={secondary}
-              onChange={event => setSecondary(event.target.checked)}
-            //   value="secondary"
-            />
-          }
-          label="Eswar"
-        />
-        
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={secondary}
-              onChange={event => setSecondary(event.target.checked)}
-            //   value="secondary"
-            />
-          }
-          label="Vikram"
-        />
-        
-        <FormControlLabel
-          control={
-            <Checkbox
-            //   checked={secondary}
-              onChange={event => setSecondary(event.target.checked)}
-            //   value="secondary"
-            />
-          }
-          label="Sai kiran"
-        />
-        
-        <FormControlLabel
-          control={
-            <Checkbox
-            //   checked={secondary}
-              onChange={event => setSecondary(event.target.checked)}
-            //   value="secondary">
-            />
-          }
-          label="Dhananjay"
-        />
-        
-         <Button variant="contained" color="" className={classes.button}>
+                    <MenuItem > <Checkbox
+        // checked={state.checkedB}
+        onChange={handleChange('checkedB')}
+        value="checkedB"
+        color="primary"
+        inputProps={{
+          'aria-label': 'secondary checkbox',
+        }}
+      />dileept</MenuItem>
+                    <MenuItem ><Checkbox
+        // checked={state.checkedB}
+        onChange={handleChange('checkedB')}
+        value="checkedB"
+        color="primary"
+        inputProps={{
+          'aria-label': 'secondary checkbox',
+        }}
+      />vikaram</MenuItem>
+                    <MenuItem ><Checkbox
+        // checked={state.checkedB}
+        onChange={handleChange('checkedB')}
+        value="checkedB"
+        color="primary"
+        inputProps={{
+          'aria-label': 'secondary checkbox',
+        }}
+      />sai kiran</MenuItem>
+                    <MenuItem><Checkbox
+        // checked={state.checkedB}
+        onChange={handleChange('checkedB')}
+        value="checkedB"
+        color="primary"
+        inputProps={{
+          'aria-label': 'secondary checkbox',
+        }}
+      />Dhananjay</MenuItem>
+      <MenuItem><Checkbox
+        // checked={state.checkedB}
+        onChange={handleChange('checkedB')}
+        value="checkedB"
+        color="primary"
+        inputProps={{
+          'aria-label': 'secondary checkbox',
+        }}
+      />Mohan Krishna</MenuItem>
+      <MenuItem><Checkbox
+        // checked={state.checkedB}
+        onChange={handleChange('checkedB')}
+        value="checkedB"
+        color="primary"
+        inputProps={{
+          'aria-label': 'secondary checkbox',
+        }}
+      />Eswar</MenuItem>
+      <MenuItem><Checkbox
+        // checked={state.checkedB}
+        onChange={handleChange('checkedB')}
+        value="checkedB"
+        color="primary"
+        inputProps={{
+          'aria-label': 'secondary checkbox',
+        }}
+      />shrinivas</MenuItem>
+      <MenuItem><Checkbox
+        // checked={state.checkedB}
+        onChange={handleChange('checkedB')}
+        value="checkedB"
+        color="primary"
+        inputProps={{
+          'aria-label': 'secondary checkbox',
+        }}
+      />Susma </MenuItem>
+      <MenuItem><Checkbox
+        // checked={state.checkedB}
+        onChange={handleChange('checkedB')}
+        value="checkedB"
+        color="primary"
+        inputProps={{
+          'aria-label': 'secondary checkbox',
+        }}
+      />Ramya</MenuItem>
+      <MenuItem><Checkbox
+        // checked={state.checkedB}
+        onChange={handleChange('checkedB')}
+        value="checkedB"
+        color="primary"
+        inputProps={{
+          'aria-label': 'secondary checkbox',
+        }}
+      />Ananya</MenuItem>
+      <MenuItem> <Button variant="contained" className={classes.button} onClick={handleClose} >
         Submit
+      </Button></MenuItem>
+                  </MenuList>
+                </ClickAwayListener>
+              </Paper>
+            </Grow>
+             
+          )}
+         
+        </Popper>
+    
+      </div>
+      </div>
+      </div>
+      <div  className={classes.MuiTouchRipplerootutton}>
+      <Button variant="contained">
+        Export 
       </Button>
-        
-
-       </FormGroup>
-       {/* {Listofemployees} */}
-       
-       </div>
-       </div>
-    </div>
-  );
+      </div>
+  
+  
+  </div>
+   );
 }
 
-export default Employee_form;
+export default Employee_Form;

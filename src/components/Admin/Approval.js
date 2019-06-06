@@ -151,7 +151,7 @@ class Approval extends Component {
             {this.state.posts.map(
               post =>
                 post.leave_status == "Pending" && (
-                  <Card style={{ width: "14.4rem" }} id="#div1">
+                  <Card className="leaveCard" style={{ width: "14.4rem" }} id="#div1">
                     <Card.Header className="card_header">
                       <h5 className="username">{post.username}</h5>
                       <span style={{ fontWeight: "lighter" }}>

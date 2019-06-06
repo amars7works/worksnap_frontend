@@ -92,10 +92,7 @@ function CustomNavigation() {
               <MenuItem component={Link} to="/frd/Employee_form/">
                 Employee_From
               </MenuItem>,
-              <MenuItem component={Link} to="/frd/Employee_form/">
-              Employee_From
-            </MenuItem>,
-           
+              
               <MenuItem component={Link} to="/">
                 Leave Request
               </MenuItem>,

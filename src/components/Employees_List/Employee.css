@@ -8,6 +8,8 @@
 .row{
 margin-right:0px !important; 
 margin-left: 0px !important;
+display: inline-flex !important;
+position: relative;
 }
 .card img{
     margin: auto;
