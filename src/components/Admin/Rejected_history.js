@@ -26,9 +26,9 @@ export class Rejected_history extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(date) {
+    handleChange(leave_start_date) {
       this.setState({
-         selected_date:date,
+         selected_date:leave_start_date,
         // selected:date,
         // startDate: new Date(),
       
@@ -46,26 +46,34 @@ export class Rejected_history extends Component {
         return this.state.posts.slice(0, MAX_ITEMS);
       }
 
-    componentDidMount(){
-        const config = {
-            url: "/api/leave_rejected_list/",
-            method: 'GET',
-            withCredentials: true,
+   
+  fetchRejectListData(){
+    //  console.log("selected date is: ",this.state.selected_date)
+    const config = {
+      url: "/api/leave_approved_list/",
+      method: 'GET',
+      withCredentials: true,
+      params:{
+     
+        leave_start_date:moment(this.state.startDate).format('YYYY-MM-DD')
+          
+     },
+  
+  }
+  axios(config)
+  .then((res) => {
+      this.setState({
+        posts: res.data,
+         
+      });
+  
+  });
+   }
+  
+  componentDidMount(){
     
-        }
-        axios(config)
-        .then((res) => {
-            this.setState({
-                posts: res.data,
-                startDate: new Date(),
-
-            });
-    
-             console.log(res.data)
-        });
-        
-    
-    }
+    this.fetchRejectListData()
+  }
   render() {
     let smClose = () => this.setState({ smShow: false });
 

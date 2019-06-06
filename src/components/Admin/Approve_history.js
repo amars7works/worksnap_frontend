@@ -22,7 +22,18 @@ export class Approve_history extends Component {
       startDate: new Date(),
       smShow: false
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.fetchApprovelListData = this.fetchApprovelListData.bind(this);
   }
+  handleChange(leave_start_date) {
+    this.setState({
+      startDate:leave_start_date,
+      // selected:date,
+    },()=>{
+      this.fetchApprovelListData();
+    })
+  }
+
   toggle = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };
@@ -34,19 +45,32 @@ export class Approve_history extends Component {
     return this.state.posts.slice(0, MAX_ITEMS);
   }
 
-  componentDidMount() {
+  fetchApprovelListData(){
+    //  console.log("selected date is: ",this.state.selected_date)
     const config = {
       url: "/api/leave_approved_list/",
-      method: "GET",
-      withCredentials: true
-    };
-    axios(config).then(res => {
+      method: 'GET',
+      withCredentials: true,
+      params:{
+     
+        leave_start_date:moment(this.state.startDate).format('YYYY-MM-DD')
+          
+     },
+  
+  }
+  axios(config)
+  .then((res) => {
       this.setState({
-        posts: res.data
+        posts: res.data,
+         
       });
-
-      // console.log(res.data)
-    });
+  
+  });
+   }
+  
+  componentDidMount(){
+    
+    this.fetchApprovelListData()
   }
 
   render() {
@@ -69,12 +93,11 @@ export class Approve_history extends Component {
                     name="range1"
                     ref="range1"
                     id="range1"
-                    value={this.state.data_start}
                     placeholderText="Click to select a date"
                     selected={this.state.startDate}
-                    selectsStart
-                    startDate={this.state.startDate}
-                    onChange={this.handleChangeStart}
+                    // selectsStart
+                    // startDate={this.state.startDate}
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>

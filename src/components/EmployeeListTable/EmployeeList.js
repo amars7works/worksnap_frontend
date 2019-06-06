@@ -4,11 +4,10 @@ import DatePicker from 'react-datepicker';
 import  './EmployeeList.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import {Card} from 'react-bootstrap'
 import axios from 'axios'
 import moment from 'moment'
 
+//EmployeeList page showing employee name, status and Duration
 
 export class EmployeeList extends Component{
 	    constructor (props) {
@@ -32,6 +31,7 @@ export class EmployeeList extends Component{
       this.fetchLeaveListData();
     })
   }
+  //using URL and Fetch the data  
  fetchLeaveListData(){
   //  console.log("selected date is: ",this.state.selected_date)
   const config = {
@@ -72,18 +72,16 @@ componentDidMount(){
 
             <DatePicker
               // className="date_design"
-              selected={this.state.selected_date}
-              onChange={this.handleChange }
+              selected={ this.state.selected_date }
+              onChange={ this.handleChange }
               dateFormat="YYYY-MM-dd"
               style={{float:'left'}}
               // dayClassName={date => getDate(date) < Math.random() * 31 ? 'random' : undefined} />
               />
        </div>
        <label className="label_design_headding">EmployeeList Table  </label>
-     
-     <div>
-  
-     		
+       {/* // Creating a Table        */}
+  <div>
 <table className="table table_design table-bordered" style={{float:"left"}}>
  <thead>
      <tr>
