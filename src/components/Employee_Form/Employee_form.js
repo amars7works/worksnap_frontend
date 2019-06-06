@@ -22,6 +22,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
+import { func } from 'prop-types';
 
 
 const useStyles = makeStyles(theme => ({
@@ -84,6 +85,7 @@ function Employee_form() {
   const [secondary, setSecondary] = React.useState(false);
   const [Work, setWork] = React.useState('');
   const [open, setOpen] = React.useState(false);
+  const label=React.useState(false);
 
   function handleChange(event) {
     setWork(event.target.value);
@@ -96,7 +98,10 @@ function Employee_form() {
   function handleOpen() {
     setOpen(true);
   }
-  
+  // function Listofemployees()
+  // {
+  //   {this.state.label}
+  // }
 
   return (
       <div>
@@ -217,6 +222,7 @@ function Employee_form() {
         
 
        </FormGroup>
+       {/* {Listofemployees} */}
        
        </div>
        </div>

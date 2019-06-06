@@ -74,73 +74,56 @@ function CustomNavigation() {
         />
 
 
-        <Divider />
-        <EmployerAuthRoute>
-          <List>
-            {[
-              <MenuItem component={Link} to="/">
-                Dashboard
-              </MenuItem>,
 
-              <MenuItem component={Link} to="/frd/EmployeeList/">
-                EmployeeList Table
-              </MenuItem>,
+       
 
-              <MenuItem component={Link} to="/frd/employees/">
-                Employees
-              </MenuItem>,
-              <MenuItem component={Link} to="/frd/Employee_form/">
-                Employee_From
-              </MenuItem>,
-              <MenuItem component={Link} to="/">
-                Leave Request
-              </MenuItem>,
 
-              <MenuItem
-                component={Link}
-                to="/"
-                onClick={() => {
-                  SecureLogoutUser();
-                }}
-              >
-                Logout
-              </MenuItem>
-            ].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <Dashboard /> : <AccountCircle />}{" "}
-                </ListItemIcon>
 
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-        </EmployerAuthRoute>
 
-        <div>
-          <List>
-            {[
-              <IconButton
-                aria-label="Delete"
-                className={classes.margin}
-                size="small"
-                component={Link}
-                to="/frd/worknap_report/"
-              >
-                {/* <ArrowDownwardIcon fontSize="inherit" /> */}
-                WorkSnap Report
-              </IconButton>
-            ].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <ArrowDownwardIcon /> : <AccountCircle />}{" "}
-                </ListItemIcon>
+        {/* <Divider />
+        <MenuList>
+            <MenuItem component={Link} to = "/">
+            Dashboard
+            <Dashboard/>
+<
+            </MenuItem>
 
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-        </div>
+            <MenuItem component={Link} to = "/frd/employee">
+            Total Emloyees           
+            </MenuItem>
+
+            <MenuItem component={Link} to = "/frd/dailyreport/">
+          Daily Report            
+            </MenuItem>
+
+            <MenuItem component={Link} to = "/frd/dailyreport/">
+          Daily Report            
+            </MenuItem>
+         
+            <MenuItem component={Link} to = "/frd/requests/">
+            Leave Request
+            </MenuItem>
+            <MenuItem component={Link} to = "/frd/EmployeeList/">
+            Employee List Table 
+            </MenuItem>
+            <MenuItem component={Link} to = "/" onClick={() => {SecureLogoutUser()}}>
+            Logout
+            </MenuItem>
+
+            </MenuList>
+            
+            
+            <Divider /> */}
+
+
+        {/* <List>
+          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List> */}
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />

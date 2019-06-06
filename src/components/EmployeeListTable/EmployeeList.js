@@ -15,13 +15,14 @@ export class EmployeeList extends Component{
     super(props)
     this.state = {
       selected_date:new Date(),
-      selected:'',
+      // selected:'',
       array:[],
     };
     this.handleChange = this.handleChange.bind(this);
     this.fetchLeaveListData = this.fetchLeaveListData.bind(this);
     
   }
+  
 
   handleChange(date) {
     this.setState({
@@ -65,16 +66,19 @@ componentDidMount(){
       <div>
         <CustomNavigation />
         <div className="container">
-	            	
+
+	            	<div>
            <label className="label_design">Select Date: </label> 
+
             <DatePicker
-              className="date_design"
-              selected={ this.state.selected_date }
-              onChange={ this.handleChange }
+              // className="date_design"
+              selected={this.state.selected_date}
+              onChange={this.handleChange }
               dateFormat="YYYY-MM-dd"
+              style={{float:'left'}}
               // dayClassName={date => getDate(date) < Math.random() * 31 ? 'random' : undefined} />
               />
-       
+       </div>
        <label className="label_design_headding">EmployeeList Table  </label>
      
      <div>
@@ -102,7 +106,8 @@ componentDidMount(){
 </table>
 				</div>
 			</div>
-				</div>
+      </div>
+
 
 
 			)
