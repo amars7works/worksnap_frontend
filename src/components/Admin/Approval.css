@@ -128,10 +128,13 @@ position: relative;
 
         margin-left: 18px;
         margin-top: 15px;
+        width: 95% !important;
 
 
 }
-
+.slick-slider{
+    margin-left: 215px;
+}
 .username{
     color: #7ab3cf;
     font-weight: bold;

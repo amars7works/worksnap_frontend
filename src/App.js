@@ -8,6 +8,7 @@ import EmployeeReport from './pages/EmployeeReport';
 import Employee from './components/Employee/Employee';
 import Dailyreport from './components/Dailyreport/Dailyreport'
 import Employees from './components/Employees_List/Employess_list'
+import DailyreportAdmin from './components/DailyreportAdmin/DailyreportAdmin'
 import FullWidthTabs from './components/Employeee/Employeee'
 import EmployeeList from './components/EmployeeListTable/EmployeeList';
 import Employee_form from './components/Employee_Form/Employee_form';

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "react-tabs/style/react-tabs.css";
 import "./DailyreportAdmin.css";
 import CustomNavigation from "../SideNavbar/SideNavbar";
 import DatePicker from "react-datepicker";
@@ -93,6 +92,8 @@ export class DailyreportAdmin extends Component {
                   onChange={this.handleChangeEnd}
                   //  dateFormat="MM/DD/YYYY"
                 />
+
+
               </div>
             </div>
             <div className="tab">
