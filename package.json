@@ -14,19 +14,21 @@
     "moment": "^2.24.0",
     "numeral": "^2.0.6",
     "react": "^16.8.6",
-    "react-alice-carousel": "^1.13.11",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-bootstrap-date-picker": "^5.1.0",
     "react-calendar": "^2.19.0",
     "react-datepicker": "^2.6.0",
     "react-dom": "^16.8.6",
     "react-pretty-numbers": "^3.0.0",
+    "react-responsive-carousel": "^3.1.49",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
     "react-scroll-horizontal": "^1.6.2",
+    "react-slick": "^0.24.0",
     "react-swipeable-views": "^0.13.3",
     "react-virtualized": "^9.21.1",
-    "reactstrap": "^8.0.0"
+    "reactstrap": "^8.0.0",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -48,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-alice-carousel": "^1.13.14"
   }
 }

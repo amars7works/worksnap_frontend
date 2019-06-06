@@ -10,6 +10,7 @@ import {
 // import DatePicker from "react-datepicker";
 import moment from 'moment';
 // import HorizontalScroll from 'react-scroll-horizontal'
+import Slider from "react-slick";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "./Approval.css";
@@ -117,6 +118,14 @@ class Approval extends Component {
 
   render() {
     const { CustomNavigation } = this.props;
+    const settings = {
+      dots: true, 
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      padding: "10px",
+    };
     return (
       <div>
         <CustomNavigation />
@@ -137,11 +146,12 @@ class Approval extends Component {
                 </Nav> */}
           </div>
 
-          <div className="row employrequest">
+          <Slider {...settings}>
+
             {this.state.posts.map(
               post =>
                 post.leave_status == "Pending" && (
-                  <Card style={{ width: "16.4rem" }} id="#div1">
+                  <Card style={{ width: "14.4rem" }} id="#div1">
                     <Card.Header className="card_header">
                       <h5 className="username">{post.username}</h5>
                       <span style={{ fontWeight: "lighter" }}>
@@ -195,7 +205,8 @@ class Approval extends Component {
                   </Card>
                 )
             )}
-          </div>
+                    </Slider>
+
         </div>
         <div className="col-md-8 Approvehistory">  
           <Approve_history />
