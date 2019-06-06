@@ -1,4 +1,4 @@
-.date_design
+/* .date_design
 {
 	
 	height: 30px! important;
@@ -11,7 +11,6 @@
 	
   /* position: absolute !important;  */
 
-}
 .label_design
 {
 display: inline-block;
@@ -45,11 +44,11 @@ border-radius: 10px;
   border-collapse: collapse; 
 
 }
-.react-datepicker__month-container {
+/* .react-datepicker__month-container {
 	margin-left: 70px;
 	float: left;
 	margin-top: 50px;
-}
+} */
 
 thead {
 	background:#f9f9f9;
@@ -76,11 +75,11 @@ th{
 	background: #4A0617
 
 }
-.react-datepicker-wrapper {
+/* .react-datepicker-wrapper {
     display: contents !important;
 	float: left;
 	margin-left: 30px;
-}
+} */
 
 
 

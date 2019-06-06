@@ -15,7 +15,6 @@ export class WorksnapReport extends Component {
          
          selected_option: "",
           posts:[],
-          scheduled: null
 
         };
       }
@@ -116,14 +115,6 @@ export class WorksnapReport extends Component {
 
         </div>
         <div className="col-md-8 Report">
-
-
-        
-      
-
-
-
-
 
        
       </div>
