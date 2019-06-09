@@ -15,6 +15,7 @@ import Employee_form from './components/Employee_Form/Employee_form';
 //import NotFound from './pages/Page404'
 import { EmployerAuthRoute, EmployeeAuthRoute, PublicRoute } from "./components/SimplifiedAuthRoute"; 
 import WorksnapReport from './components/WorksnapReport/Worksnap_Report';
+import { WorkFromHome } from './pages/WorkFromHome'
 
 
 class App extends React.Component {
@@ -37,6 +38,7 @@ class App extends React.Component {
           <EmployerAuthRoute exact path='/frd/EmployeeList/' component={EmployeeList} />
           <EmployerAuthRoute exact path='/frd/Employee_form/' component={Employee_form} />
           <EmployerAuthRoute exact path='/frd/worknap_report/' component={WorksnapReport} />
+          <EmployerAuthRoute exact path='/frd/work_from_home' component={WorkFromHome} />
 
           {/* Public routes: employeeRoute is the employee initial routing path */}
           <PublicRoute exact 
