@@ -65,7 +65,7 @@ componentDidMount(){
     return (
       <div>
         <CustomNavigation />
-        <div className="container">
+        <div className="container employee-table">
 
 	            	<div>
            <label className="label_design">Select Date: </label> 

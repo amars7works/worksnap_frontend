@@ -149,7 +149,7 @@ export class Leave extends Component {
                     >
                       <option value="">select option</option>
                       <option value="Sick_Leave">Sick Leave</option>
-                      <option value="Vacation_Leave">Vacation Leave</option>
+                      <option value="Vacational_Leave">Vacation Leave</option>
                       <option value="General_Leave">General Leave</option>
                       <option value="Emergency">Emergency</option>
                     </Input>

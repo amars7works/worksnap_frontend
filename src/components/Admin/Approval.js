@@ -116,11 +116,68 @@ class Approval extends Component {
     // this.status(posts.id)
   }
 
+  renderSliderComponents( post ) {
+    return post.leave_status == "Pending" && (
+      <Card className="leaveCard" style={{ width: "14.4rem" }} id="#div1">
+        <Card.Header className="card_header">
+          <h5 className="username">{post.username}</h5>
+          <span style={{ fontWeight: "lighter" }}>
+            Web Developer
+          </span>
+        </Card.Header>
+
+        <Card.Body>
+          <Card.Title />
+          <Card.Text>
+            <p className="date">
+              {moment(post.leave_start_date).format("MMM Do YYYY")}-
+              {moment(post.leave_end_date).format("MMM Do YYYY")}
+            </p>
+
+            <p>{post.Type_of_Request}</p>
+
+            <p>{post.apply_reason}</p>
+            <p>
+              Remaining Leaves
+              <Badge variant="secondary">
+                {/* {post.remainingleaves} */}
+                {numeral(post.remainingleaves).format('0,0')}
+              </Badge>
+            </p>
+            {/* <h6>
+                Total Leaves <Badge variant="secondary">New</Badge>
+                </h6> */}
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer className="text-muted">
+          <Button
+            className="col-md-5 btn"
+            variant="danger"
+            onClick={() => {
+              this.declineRequest(post.id);
+            }}
+          >
+            Decline
+          </Button>
+          <Button
+            className="col-md-5 btn"
+            variant="success"
+            onClick={() => {
+              this.approvedRequest(post.id);
+            }}
+          >
+            Accept
+          </Button>
+        </Card.Footer>
+      </Card>
+    );
+  }
+
   render() {
     const { CustomNavigation } = this.props;
     const settings = {
       dots: true, 
-      infinite: true,
+      infinite: this.state.posts.length > 3,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 3,
@@ -147,65 +204,8 @@ class Approval extends Component {
           </div>
 
           <Slider {...settings}>
-
-            {this.state.posts.map(
-              post =>
-                post.leave_status == "Pending" && (
-                  <Card className="leaveCard" style={{ width: "14.4rem" }} id="#div1">
-                    <Card.Header className="card_header">
-                      <h5 className="username">{post.username}</h5>
-                      <span style={{ fontWeight: "lighter" }}>
-                        Web Developer
-                      </span>
-                    </Card.Header>
-
-                    <Card.Body>
-                      <Card.Title />
-                      <Card.Text>
-                        <p className="date">
-                          {moment(post.leave_start_date).format("MMM Do YYYY")}-
-                          {moment(post.leave_end_date).format("MMM Do YYYY")}
-                        </p>
-
-                        <p>{post.Type_of_Request}</p>
-
-                        <p>{post.apply_reason}</p>
-                        <p>
-                          Remaining Leaves
-                          <Badge variant="secondary">
-                            {/* {post.remainingleaves} */}
-                            {numeral(post.remainingleaves).format('0,0')}
-                          </Badge>
-                        </p>
-                        {/* <h6>
-                            Total Leaves <Badge variant="secondary">New</Badge>
-                            </h6> */}
-                      </Card.Text>
-                    </Card.Body>
-                    <Card.Footer className="text-muted">
-                      <Button
-                        className="col-md-5 btn"
-                        variant="danger"
-                        onClick={() => {
-                          this.declineRequest(post.id);
-                        }}
-                      >
-                        Decline
-                      </Button>
-                      <Button
-                        className="col-md-5 btn"
-                        variant="success"
-                        onClick={() => {
-                          this.approvedRequest(post.id);
-                        }}
-                      >
-                        Accept
-                      </Button>
-                    </Card.Footer>
-                  </Card>
-                )
-            )}
-                    </Slider>
+          {this.state.posts.map( this.renderSliderComponents )}
+          </Slider>
 
         </div>
         <div className="col-md-8 Approvehistory">  
