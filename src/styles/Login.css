@@ -5,3 +5,16 @@
     top: 30%;
     background-color: whitesmoke;
 }
+#custom_spinner{
+    font-size: 30px;
+    /* margin-top: 25%; */
+    /* z-index:100; */
+    /* background-color:whitesmoke; */
+    opacity: 2.5;
+    
+  }
+
+  .mx-auto{
+    position: fixed; /* or absolute */
+    top: 50%;
+  }
