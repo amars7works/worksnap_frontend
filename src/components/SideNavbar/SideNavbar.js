@@ -20,7 +20,6 @@ import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import IconButton from "@material-ui/core/IconButton";
 
 const drawerWidth = 240;
-
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -90,8 +89,12 @@ function CustomNavigation() {
                 Employees
               </MenuItem>,
               <MenuItem component={Link} to="/frd/Employee_form/">
-                Employee From
+                Employee_From
               </MenuItem>,
+            //   <MenuItem component={Link} to="/frd/daily_report/">
+            //   Employee_From
+            // </MenuItem>,
+           
               <MenuItem component={Link} to="/">
                 Leave Request
               </MenuItem>,
@@ -102,8 +105,11 @@ function CustomNavigation() {
                 onClick={() => {
                   SecureLogoutUser();
                 }}
-              >
+              >           
+
                 Logout
+
+                
               </MenuItem>
             ].map((text, index) => (
               <ListItem button key={text}>
@@ -148,9 +154,5 @@ function CustomNavigation() {
     </div>
   );
 }
-
-{/*<MenuItem component={Link} to="/frd/work_from_home/">
-                Work from home
-              </MenuItem>*/}
 
 export default CustomNavigation;

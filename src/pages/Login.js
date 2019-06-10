@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {Form,Button} from 'react-bootstrap';
 import '../styles/Login.css';
+import FontAwesome from "react-fontawesome";
 import { SecureLoginUser } from '../components/Networks/Auth';
-
 
 class Login extends Component {
   constructor(props) {
@@ -11,11 +11,11 @@ class Login extends Component {
     // userService.logout();
 
     this.state = {
+        loading:false,
         username: '',
         password: '',
         submitted: false,
-        loading: false,
-        error: ''
+        error: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,7 +30,7 @@ class Login extends Component {
   handleSubmit(e) { 
       
     e.preventDefault();
-    this.setState({ submitted: true });
+    this.setState({ submitted: true, loading: true });
     const { username, password, returnUrl } = this.state;
 
     // stop here if form is invalid
@@ -39,7 +39,12 @@ class Login extends Component {
     }
     
     // signs users in.
+    
+
     SecureLoginUser(username, password, this.props)
+          
+    // error => this.setState({ error, loading: false })
+
           
   }
           
@@ -64,6 +69,7 @@ class Login extends Component {
                             <div className="help-block">Username is required</div>
                         }
           </Form.Group>
+         
 
           <Form.Group controlId="formBasicPassword">
             <Form.Label className="email">Password</Form.Label>
@@ -79,15 +85,29 @@ class Login extends Component {
                             <div className="help-block">Password is required</div>
                         }
           </Form.Group>
+          
           <Form.Group controlId="formBasicChecbox">
             <Form.Check type="checkbox" label="Remember Password" />
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Login
-          </Button>
 
-          
+          <Button variant="primary" type="submit" disabled={loading} >
+            Login
+            
+          </Button>
+        
+        
         </Form>
+        {/* {loading && <center> 
+          <FontAwesome 
+							name='spinner' 
+							size='3x'
+							pulse spin
+              className="mx-auto"   
+						/>
+          </center>
+                            
+      } */}
+     
       </div>
     );
   }

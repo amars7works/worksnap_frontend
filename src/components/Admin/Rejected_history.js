@@ -50,7 +50,7 @@ export class Rejected_history extends Component {
   fetchRejectListData(){
     //  console.log("selected date is: ",this.state.selected_date)
     const config = {
-      url: "/api/leave_approved_list/",
+      url: "/api/leave_rejected_list/",
       method: 'GET',
       withCredentials: true,
       params:{
